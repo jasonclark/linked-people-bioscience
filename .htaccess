@@ -1,0 +1,9 @@
+#add handler that allows html, xml, and json to work dynamically as PHP
+#https://httpd.apache.org/docs/current/mod/mod_mime.html#addtype
+#https://httpd.apache.org/docs/current/mod/mod_mime.html#addhandler
+#AddType application/x-httpd-php .html .xml .json
+AddHandler php5-script .html
+#AddHandler php5-script .html .xml .json
+<FilesMatch "^(sitemap)\.xml$">
+AddHandler php5-script .xml
+</FilesMatch>
