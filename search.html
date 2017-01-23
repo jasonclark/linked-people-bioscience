@@ -35,10 +35,10 @@ $customScript[1] = 'http://montanalibcal.com/schedulerjs.php';
 <meta charset="utf-8"/>
 <meta http-equiv="x-ua-compatible" content="ie=edge"/>
 <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0" />
-<title><?php echo($pageTitle); ?> :: Montana State University (MSU) Library</title>
+<title><?php echo($pageTitle); ?>: Montana State University (MSU) Library</title>
 <link rel="shortcut icon" href="/meta/img/msu_favicon.ico" />
 <link rel="canonical" href="<?php echo $protocol.$server.$path.'/'.$fileName; ?>"/>
-<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic"/>
 <link rel="stylesheet" href="./meta/styles/<?php echo $customCSS; ?>"/>
 <?php
 if ($customScript) {
@@ -64,7 +64,6 @@ $(window).load(function() {
 </script>
 
 <?php
-
 // Number of records to display per page
 $recordsPerPage = 15;
 
