@@ -1,0 +1,15 @@
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+	<!-- OWL Header Example -->
+	<owl:Ontology rdf:about="https://www.lib.montana.edu/ontology/biosciences/">
+		<dc:title>Biosciences Ontology</dc:title>
+		<dc:description>An ontology written for the Semantic Modeling of Researcher Networks: Applying Linked Open Data for Discovery project based on a partnership with the Montana State University (MSU) - Center For Biofilm Engineering (CBE) to describe Bioscience data</dc:description>
+	</owl:Ontology>
+
+	<!-- Remainder Of Document Under Development... -->
+
+</rdf:RDF>
