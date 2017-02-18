@@ -10,17 +10,11 @@
 		<dc:description>An ontology written for the Semantic Modeling of Researcher Networks: Applying Linked Open Data for Discovery project based on a partnership with the Montana State University (MSU) - Center For Biofilm Engineering (CBE) to describe Bioscience data</dc:description>
 	</owl:Ontology>
 
-	<!-- OWL Class Definition - Topic Type -->
-	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#topic">
-	<owl:equivalentClass rdf:resource="http://purl.org/dc/terms/subject"/>
-		<rdfs:label>The research or researcher topic</rdfs:label>
-		<rdfs:comment>The class of all research or researcher topics.</rdfs:comment>
-	</owl:Class>
-	<!-- OWL Class Definition - Topic Type -->
-	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#topic">
-	<owl:equivalentClass rdf:resource="http://purl.org/dc/terms/subject"/>
-		<rdfs:label>The research or researcher topic</rdfs:label>
-		<rdfs:comment>The class of all research or researcher topics.</rdfs:comment>
+	<!-- OWL Class Definition - Person Type -->
+	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#person">
+	<owl:equivalentClass rdf:resource="https://schema.org/Person"/>
+		<rdfs:label>The person in the research act</rdfs:label>
+		<rdfs:comment>The person and subject of the research act including roles</rdfs:comment>
 	<!-- OWL Class Definition - Document Type -->
 	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#document">
 	<owl:equivalentClass rdf:resource="http://purl.org/dc/terms/type"/>
