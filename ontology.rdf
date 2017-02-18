@@ -16,6 +16,36 @@
 		<rdfs:label>The research or researcher topic</rdfs:label>
 		<rdfs:comment>The class of all research or researcher topics.</rdfs:comment>
 	</owl:Class>
+	<!-- OWL Class Definition - Topic Type -->
+	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#topic">
+	<owl:equivalentClass rdf:resource=“http://purl.org/dc/terms/subject"/>
+		<rdfs:label>The research or researcher topic</rdfs:label>
+		<rdfs:comment>The class of all research or researcher topics.</rdfs:comment>
+	<!-- OWL Class Definition - Topic Type -->
+	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#topic">
+	<owl:equivalentClass rdf:resource=“http://purl.org/dc/terms/subject"/>
+		<rdfs:label>The research or researcher topic</rdfs:label>
+		<rdfs:comment>The class of all research or researcher topics.</rdfs:comment>
+	</owl:Class>
+	<!-- OWL Class Definition - Topic Type -->
+	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#topic">
+	<owl:equivalentClass rdf:resource=“http://purl.org/dc/terms/subject"/>
+		<rdfs:label>The research or researcher topic</rdfs:label>
+		<rdfs:comment>The class of all research or researcher topics.</rdfs:comment>
+	</owl:Class>
+	</owl:Class>
+	<!-- OWL Class Definition - Topic Type -->
+	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#topic">
+	<owl:equivalentClass rdf:resource=“http://purl.org/dc/terms/subject"/>
+		<rdfs:label>The research or researcher topic</rdfs:label>
+		<rdfs:comment>The class of all research or researcher topics.</rdfs:comment>
+	</owl:Class>
+	<!-- OWL Class Definition - Expertise Type -->
+	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#expertise">
+	<owl:equivalentClass rdf:resource=“http://purl.org/dc/terms/subject"/>
+		<rdfs:label>The researcher expertise</rdfs:label>
+		<rdfs:comment>The class of all researcher expertise.</rdfs:comment>
+	</owl:Class>
 
 	<!-- Remainder Of Document Under Development... -->
 
