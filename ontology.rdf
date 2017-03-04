@@ -36,11 +36,19 @@
 	</owl:Class>
         <!-- OWL Subclass Definition - Archaea -->
 	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#archaea">
-		<!-- Archaea is a subclassification of topic -->
+        <!-- Archaea is a subclassification of topic -->
                 <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Archaea"/>
 		<rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
 		<rdfs:label>Archaea</rdfs:label>
 		<rdfs:comment>The Archaea constitute a domain or kingdom of single-celled microorganisms. These microbes are prokaryotes, meaning that they have no cell nucleus or any other membrane-bound organelles in their cells.</rdfs:comment>
+	</owl:Class>
+        <!-- OWL Subclass Definition - Bacteria -->
+	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#bacteria">
+        <!-- Archaea is a subclassification of topic -->
+                <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Bacteria"/>
+		<rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+		<rdfs:label>Bacteria</rdfs:label>
+		<rdfs:comment>Bacteria (/bækˈtɪəriə/; singular: bacterium) constitute a large domain of prokaryotic microorganisms. Typically a few micrometres in length, bacteria have a number of shapes, ranging from spheres to rods and spirals. Bacteria were among the first life forms to appear on Earth, and are present in most of its habitats. Bacteria inhabit soil, water, acidic hot springs, radioactive waste, and the deep portions of Earth's crust. Bacteria also live in symbiotic and parasitic relationships with plants and animals.</rdfs:comment>
 	</owl:Class>
 	<!-- OWL Class Definition - Expertise Type -->
 	<owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#expertise">
