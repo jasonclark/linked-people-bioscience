@@ -20,7 +20,6 @@
     <rdfs:label>The research document type</rdfs:label>
     <rdfs:comment>The class of all research document type or genre.</rdfs:comment>
   </owl:Class>
-  <!-- Probable subclasses: Scholarly paper, Review article, Position paper, Working paper, Literature review, Thesis (Compilation thesis, Monograph), Specialized patent (biological, chemical), Book, Book chapter, Technical report, Pamphlet, Essay, White paper, Preprint, Poster session, Lab notes, Abstract, Dataset -->
   <!-- OWL Subclass Definition - Scholarly Paper -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#scholarly-paper">
     <!-- Scholarly paper is a subclassification of document type -->
@@ -29,6 +28,7 @@
     <rdfs:label>Scholarly paper</rdfs:label>
     <rdfs:comment>In academic publishing, a paper is an academic work that is usually published in an academic journal. It contains original research results or reviews existing results.</rdfs:comment>
   </owl:Class>
+  <!-- Probable subclasses: Scholarly paper, Review article, Position paper, Working paper, Literature review, Thesis (Compilation thesis, Monograph), Specialized patent (biological, chemical), Book, Book chapter, Technical report, Pamphlet, Essay, White paper, Preprint, Poster session, Lab notes, Abstract, Dataset -->
   <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Action Type -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#action">
@@ -36,7 +36,14 @@
     <rdfs:label>The action associated with a research act</rdfs:label>
     <rdfs:comment>The class of all research actions.</rdfs:comment>
   </owl:Class>
-  <!-- Probable subclasses will be based on https://schema.org/Action -->
+  <!-- OWL Subclass Definition - AssessAction -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#assess-action">
+    <!-- AssessAction is a subclassification of action type -->
+    <owl:equivalentClass rdf:resource="https://schema.org/AssessAction"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
+    <rdfs:label>AssessAction</rdfs:label>
+    <rdfs:comment>The act of forming one's opinion, reaction or sentiment</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - WriteAction -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#write-action">
     <!-- WriteAction is a subclassification of action type -->
@@ -45,6 +52,7 @@
     <rdfs:label>WriteAction</rdfs:label>
     <rdfs:comment>The act of authoring written creative content.</rdfs:comment>
   </owl:Class>
+  <!-- Probable subclasses will be based on https://schema.org/Action -->
   <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Topic Type -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#topic">
