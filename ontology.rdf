@@ -20,6 +20,15 @@
     <rdfs:label>The research document type</rdfs:label>
     <rdfs:comment>The class of all research document type or genre.</rdfs:comment>
   </owl:Class>
+  <!-- Probable subclasses: Scholarly paper, Review article, Position paper, Working paper, Literature review, Thesis (Compilation thesis, Monograph), Specialized patent (biological, chemical), Book, Book chapter, Technical report, Pamphlet, Essay, White paper, Preprint, Poster session, Lab notes, Abstract, Dataset -->
+  <!-- OWL Subclass Definition - Scholarly Paper -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#scholarly-paper">
+    <!-- Scholarly paper is a subclassification of topic -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Academic_publishing#Scholarly_paper"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:label>Scholarly paper</rdfs:label>
+    <rdfs:comment>In academic publishing, a paper is an academic work that is usually published in an academic journal. It contains original research results or reviews existing results.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Class Definition - Action Type -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#action">
     <owl:equivalentClass rdf:resource="https://schema.org/Action"/>
