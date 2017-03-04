@@ -100,7 +100,6 @@
     <rdfs:label>Biochemistry</rdfs:label>
     <rdfs:comment>The study of chemical processes in living organisms</rdfs:comment>
   </owl:Class>
-  <!-- OWL Subclass Definition - Bacteria -->
   <!-- Probable subclasses will be based on dbpedia entities -->
   <!-- Additional Subclasses Under Development... -->
 
