@@ -23,18 +23,29 @@
   <!-- Probable subclasses: Scholarly paper, Review article, Position paper, Working paper, Literature review, Thesis (Compilation thesis, Monograph), Specialized patent (biological, chemical), Book, Book chapter, Technical report, Pamphlet, Essay, White paper, Preprint, Poster session, Lab notes, Abstract, Dataset -->
   <!-- OWL Subclass Definition - Scholarly Paper -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#scholarly-paper">
-    <!-- Scholarly paper is a subclassification of topic -->
+    <!-- Scholarly paper is a subclassification of document type -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Academic_publishing#Scholarly_paper"/>
     <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
     <rdfs:label>Scholarly paper</rdfs:label>
     <rdfs:comment>In academic publishing, a paper is an academic work that is usually published in an academic journal. It contains original research results or reviews existing results.</rdfs:comment>
   </owl:Class>
+  <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Action Type -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#action">
     <owl:equivalentClass rdf:resource="https://schema.org/Action"/>
     <rdfs:label>The action associated with a research act</rdfs:label>
     <rdfs:comment>The class of all research actions.</rdfs:comment>
   </owl:Class>
+  <!-- Probable subclasses will be based on https://schema.org/Action -->
+  <!-- OWL Subclass Definition - WriteAction -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#write-action">
+    <!-- WriteAction is a subclassification of action type -->
+    <owl:equivalentClass rdf:resource="https://schema.org/WriteAction"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
+    <rdfs:label>WriteAction</rdfs:label>
+    <rdfs:comment>The act of authoring written creative content.</rdfs:comment>
+  </owl:Class>
+  <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Topic Type -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#topic">
     <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/subject"/>
@@ -57,11 +68,13 @@
     <rdfs:label>Bacteria</rdfs:label>
     <rdfs:comment>Bacteria (/bækˈtɪəriə/; singular: bacterium) constitute a large domain of prokaryotic microorganisms. Typically a few micrometres in length, bacteria have a number of shapes, ranging from spheres to rods and spirals. Bacteria were among the first life forms to appear on Earth, and are present in most of its habitats. Bacteria inhabit soil, water, acidic hot springs, radioactive waste, and the deep portions of Earth's crust. Bacteria also live in symbiotic and parasitic relationships with plants and animals.</rdfs:comment>
   </owl:Class>
+  <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Expertise Type -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#expertise">
     <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/subject"/>
     <rdfs:label>The researcher expertise</rdfs:label>
     <rdfs:comment>The class of all researcher expertise.</rdfs:comment>
   </owl:Class>
+  <!-- Additional Subclasses Under Development... -->
   <!-- Remainder Of Document Under Development... -->
 </rdf:RDF>
