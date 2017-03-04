@@ -14,6 +14,16 @@
     <rdfs:label>The person in the research act</rdfs:label>
     <rdfs:comment>The person and subject of the research act including roles</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Author -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#author">
+    <!-- Author is a subclassification of Person Type -->
+    <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q482980"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#author"/>
+    <rdfs:label>Author</rdfs:label>
+    <rdfs:comment>The creator of an original spoken or written work</rdfs:comment>
+  </owl:Class>
+  <!-- Probable subclasses will be based on https://schema.org/Person properties and link to wikidata entities -->
+  <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Document Type -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#document">
     <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/type"/>
@@ -38,7 +48,7 @@
   </owl:Class>
   <!-- OWL Subclass Definition - AssessAction -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#assess-action">
-    <!-- AssessAction is a subclassification of action type -->
+    <!-- AssessAction is a subclassification of Action Type -->
     <owl:equivalentClass rdf:resource="https://schema.org/AssessAction"/>
     <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
     <rdfs:label>AssessAction</rdfs:label>
@@ -46,7 +56,7 @@
   </owl:Class>
   <!-- OWL Subclass Definition - WriteAction -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#write-action">
-    <!-- WriteAction is a subclassification of action type -->
+    <!-- WriteAction is a subclassification of Action Type -->
     <owl:equivalentClass rdf:resource="https://schema.org/WriteAction"/>
     <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
     <rdfs:label>WriteAction</rdfs:label>
