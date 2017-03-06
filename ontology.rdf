@@ -11,16 +11,24 @@
   <!-- OWL Class Definition - Person Type -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#person">
   <owl:equivalentClass rdf:resource="https://schema.org/Person"/>
-    <rdfs:label>The person in the research act</rdfs:label>
+    <rdfs:label>The person in the research act.</rdfs:label>
     <rdfs:comment>The person and subject of the research act including roles</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Author -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#author">
     <!-- Author is a subclassification of Person Type -->
     <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q482980"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#author"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
     <rdfs:label>Author</rdfs:label>
     <rdfs:comment>The creator of an original spoken or written work</rdfs:comment>
+  </owl:Class>
+  <!-- OWL Subclass Definition - Editor -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#editor">
+    <!-- Editor is a subclassification of Person Type -->
+    <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q1607826"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
+    <rdfs:label>Editor</rdfs:label>
+    <rdfs:comment>A person who edits texts or publications.</rdfs:comment>
   </owl:Class>
   <!-- Probable subclasses will be based on https://schema.org/Person properties and link to wikidata entities -->
   <!-- Additional Subclasses Under Development... -->
