@@ -30,6 +30,14 @@
     <rdfs:label>Editor</rdfs:label>
     <rdfs:comment>A person who edits texts or publications.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Publisher -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#publisher">
+    <!-- Publisher is a subclassification of Person Type -->
+    <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q5246046"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
+    <rdfs:label>Publisher</rdfs:label>
+    <rdfs:comment>A person who publishes and distributes academic research and scholarship.</rdfs:comment>
+  </owl:Class>
   <!-- Probable subclasses will be based on https://schema.org/Person properties and link to wikidata entities -->
   <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Document Type -->
