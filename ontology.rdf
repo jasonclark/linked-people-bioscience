@@ -52,7 +52,15 @@
     <owl:equivalentClass rdf:resource="https://schema.org/AssessAction"/>
     <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
     <rdfs:label>AssessAction</rdfs:label>
-    <rdfs:comment>The act of forming one's opinion, reaction or sentiment</rdfs:comment>
+    <rdfs:comment>The act of forming one's opinion, reaction or sentiment.</rdfs:comment>
+  </owl:Class>
+  <!-- OWL Subclass Definition - InteractAction -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#interact-action">
+    <!-- InteractAction is a subclassification of Action Type -->
+    <owl:equivalentClass rdf:resource="https://schema.org/InteractAction"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
+    <rdfs:label>InteractAction</rdfs:label>
+    <rdfs:comment>The act of interacting with another person or organization.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - WriteAction -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#write-action">
