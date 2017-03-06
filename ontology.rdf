@@ -11,7 +11,7 @@
   <!-- OWL Class Definition - Person Type -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#person">
   <owl:equivalentClass rdf:resource="https://schema.org/Person"/>
-    <rdfs:label>The person in the research act.</rdfs:label>
+    <rdfs:label>The person or agent in the research act.</rdfs:label>
     <rdfs:comment>The person and subject of the research act including roles</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Author -->
@@ -37,6 +37,14 @@
     <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
     <rdfs:label>Publisher</rdfs:label>
     <rdfs:comment>A person who publishes and distributes academic research and scholarship.</rdfs:comment>
+  </owl:Class>
+  <!-- OWL Subclass Definition - Sponsor -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#sponsor">
+    <!-- Sponsor is a subclassification of Person Type -->
+    <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q152478"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
+    <rdfs:label>Sponsor</rdfs:label>
+    <rdfs:comment>A person or agent who offers commercial support for an event, activity, or person.</rdfs:comment>
   </owl:Class>
   <!-- Probable subclasses will be based on https://schema.org/Person properties and link to wikidata entities -->
   <!-- Additional Subclasses Under Development... -->
