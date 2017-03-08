@@ -62,6 +62,14 @@
     <rdfs:label>The research document type</rdfs:label>
     <rdfs:comment>The class of all research document types or genres</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Book -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#book">
+    <!-- Book is a subclassification of document type -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Book"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:label>Book</rdfs:label>
+    <rdfs:comment>A book is a set of written, printed, illustrated, or blank sheets, made of ink, paper, parchment, or other materials, fastened together to hinge at one side. A single sheet within a book is a leaf, and each side of a leaf is a page. A set of text-filled or illustrated pages produced in electronic format is known as an electronic book, or e-book.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Scholarly Paper -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#scholarly-paper">
     <!-- Scholarly paper is a subclassification of document type -->
