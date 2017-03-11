@@ -3,7 +3,7 @@ Linked People Bioscience Project Roadmap
 
 This roadmap represents the current core development directions and status of the project.
 
-> The biggest single contribution users can help make to the project is by working on issues, bugs and features that **are not necesarily related to this roadmap**. That is because you have a unique understanding of what is lacking in the project, that would be great to hear. <!---[See CONTRIBUTING.md for more information here](CONTRIBUTING.md)--->.
+> The biggest single contribution users can help make to the project is by working on issues, bugs and features that **are not necesarily related to this roadmap**. That is because you have a unique understanding of what is lacking in the project, that would be great to hear. <!---[See CONTRIBUTING.md for more information here](CONTRIBUTING.md)--->
 
 ### 2017 Goals:
 
@@ -20,11 +20,12 @@ Tracking at https://github.com/jasonclark/linked-people-bioscience/issues.
 
 The release is currently pending the following:
 
-- [ ] Publication of web profiles as RDFa and JSON-LD
+- [ ] Publication of people profiles as RDFa and JSON-LD
 - [ ] Population of Graph Data into datastore
 - [ ] Visualization of Research Networks using D3.js
+- [ ] Search and browse interface for people profiles and recommendations  
 - [ ] 
-- [ ]  
+- [ ] 
 - [ ] General stability and feedback
 
 > Beta feedback, and discussions around the above points are very welcome.
@@ -37,7 +38,7 @@ The goal is to provide both a comprehensive vocabulary for roles, document types
 
 > Extensions in the meantime to the existing [Biosciences Ontology](ontology.rdf) are very welcome.
 
-## 3. Publication of intial paper on University Knowledge Graphs
+## 3. Publication of initial paper on University Knowledge Graphs
 
 Tracking at https://github.com/jasonclark/linked-people-bioscience/issues.
 
