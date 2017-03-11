@@ -1,0 +1,225 @@
+<?php
+//set correct content-type for json output
+header('Content-Type: application/json');
+
+//pass database parameters and connect to database
+include_once './meta/assets/dbconnect.inc';
+//bring special functions and utilities onto page
+include './meta/inc/utilities.php';
+
+//check if the $id variable was passed in url, escape the string for mysql, and validate that it is a numeric value - pass id value to select record
+if (isset($_GET['id']) and is_numeric($_GET['id'])) {
+  $id = strip_tags($connectLibstaff->real_escape_string((int)$_GET['id']));
+} else {
+  echo 'Query type not supported.';
+  exit;
+}
+
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//request selected staff data fields
+$query = "SELECT * FROM libstaff.staff WHERE staff_status = 'a' AND staff_id='$id'";
+$getPerson = $connectLibstaff->query($query);
+
+if ($getPerson->num_rows == 0) {
+  header("HTTP/1.0 404 Not Found", true, 404);
+  readfile("https://lib.montana.edu/error.php");
+  exit();
+}
+//Display selected staff entry fields in a list
+while ($row = $getPerson->fetch_object()) {
+  $staff_id = stripslashes($row->staff_id);
+  $staff_fname = stripslashes($row->givenName);
+  $staff_lname = stripslashes($row->familyName);
+  $staff_name = stripslashes($row->givenName . ' ' . $row->familyName);
+  $staff_name_rdf = stripslashes($row->givenName . ' ' . $row->familyName);
+  $staff_title = stripslashes($row->jobTitle);
+  $staff_dept = stripslashes($row->staff_dept);
+  $affiliation = stripslashes($row->affiliation);
+  $staff_room = stripslashes($row->staff_room);
+  $staff_phone = stripslashes($row->staff_phone);
+  $staff_email = stripslashes($row->staff_email);
+  $staff_emailHidden = stripslashes(formatEmailLink($row->staff_email));
+  $staff_vita = stripslashes($row->staff_vita);
+  $staff_web = stripslashes($row->staff_web);
+  $staff_image = $protocol.$server.$path.'/meta/img/photos/'.stripslashes($row->staff_image);
+  $same_as = stripslashes(htmlentities($row->sameAs));
+  $same_as2 = stripslashes(htmlentities($row->sameAs2));
+  $staff_privacy = $row->staff_privacy;
+  $staff_libcal_id = $row->staff_libcal_id;
+  $staff_libguides_link = $row->staff_libguides_link;
+?>
+{
+  "@context": "http://schema.org/",
+  "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id); ?>,
+  "@type": "ProfilePage",
+  "isPartOf": {
+    "@id": <?php echo json_encode($protocol.$server.$path.'/'); ?>,
+    "@type": [
+      "Website", 
+      "CollectionPage"
+    ], 
+    "name": "Researcher Profiles and Networks: Center for Biofilm Engineering (CBE) - Montana State University (MSU)"
+  },
+  "name": "About - <?php echo $staff_name; ?>",
+  "description": "Profile page describing <?php echo $staff_name; ?>",
+  "publisher": {
+    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#organization'); ?>
+  },
+  "reviewedBy": {
+    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#organization'); ?>
+  },
+  "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US",
+  "url": <?php echo json_encode($protocol.$server.$path.'/'.$id); ?>,
+  "significantLink": <?php echo json_encode($protocol.$server.$path.'/'.$id); ?>,
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement":[
+    {
+      "@type": "ListItem",
+      "position": "1",
+      "item": {
+        "@type": "WebSite",
+        "@id": <?php echo json_encode($protocol.$server.'/'); ?>,
+        "name": "Home"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": "2",
+      "item": {
+        "@type": "WebPage",
+        "@id": <?php echo json_encode($protocol.$server.$path.'/'); ?>,
+        "name": "People"
+      }
+    }
+    ]
+  },
+  "mainEntity": {
+    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#person'); ?>,
+    "@type": "Person",
+    "name": "<?php echo $staff_name; ?>",
+    "jobTitle": "<?php echo $staff_title; ?>",
+    "workLocation": "<?php echo $staff_dept; ?>",
+    "email": "<?php echo $staff_email; ?>",
+    "image": <?php echo json_encode($staff_image); ?>,
+    "telephone": "<?php echo $staff_phone; ?>",
+<?php
+if (strlen($staff_web) > 3) {
+?>
+    "url": "<?php echo $staff_web; ?>",
+<?php
+}
+?>
+    "affiliation": "<?php echo $affiliation; ?>",
+    "worksFor": {
+      "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#organization'); ?>,
+      "@type": "EducationalOrganization",
+      "name": "<?php echo $affiliation; ?>",
+      "sameAs": [ 
+        <?php echo json_encode('https://dbpedia.org/resource/Center_for_Biofilm_Engineering'); ?>,
+        <?php echo json_encode('https://www.wikidata.org/entity/Q19866287'); ?>,
+        <?php echo json_encode('https://viaf.org/viaf/155139603/rdf.xml'); ?>
+      ],
+      "member": {
+        "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#member'); ?>,
+        "@type": "OrganizationRole",
+        "member": {
+          "@type": "Person",
+          "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#person'); ?>,
+          "name": "<?php echo $staff_name; ?>"
+        }
+      }
+    },
+    "address": {
+      "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#address'); ?>,
+      "@type": "PostalAddress",
+      "streetAddress": "P.O. Box 173320",
+      "addressLocality": "Bozeman",
+      "addressRegion": "MT",
+      "postalCode": "59717-3320"
+    },
+    "knows": {
+      "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#colleague'); ?>,
+      "@type": "Person",
+      "colleague": [
+<?php
+//get person's colleagues
+$query = "SELECT staff_id FROM libstaff.staff WHERE staff_status = 'a' AND staff_dept='$staff_dept'";
+$getColleagues = $connectLibstaff->query($query);
+if ($getColleagues->num_rows == 0) {
+?>
+      "No colleagues assigned to this person."
+<?php
+}
+$separator = "";
+while ($row = $getColleagues->fetch_object()) {
+  $staff_id = $row->staff_id;
+  $colleagueURL = json_encode($protocol.$server.$path.'/'.$staff_id);
+  //print list of colleagues
+  echo $separator.$colleagueURL;
+  $separator = ",\n";
+}
+?>
+      ]
+    },
+    "makesOffer": {
+      "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#offer'); ?>,
+      "@type": "Offer",
+      "category": [
+<?php
+//get person's expertise topics
+$query = "SELECT *
+FROM libstaff.staff, libstaff.create_action, libstaff.create_action_match
+WHERE staff.staff_id = '$id'
+AND create_action_match.create_id = create_action.create_id
+AND create_action_match.staff_id = '$id'
+AND staff.staff_status =  'a'";
+
+$getPersonExpertise = $connectLibstaff->query($query);
+if ($getPersonExpertise->num_rows == 0) {
+?>
+    "No expertise or skill(s) assigned to this person."
+<?php
+}
+$separator = "";
+while ($row = $getPersonExpertise->fetch_object()) {
+  $object_id = $row->create_id;
+  $object = $row->object;
+  $object_url = $row->object_uri;
+  $specialtyURL = json_encode($row->object_uri);
+  //print list of expertise topics
+  echo $separator.$specialtyURL;
+  $separator = ",\n";
+}
+?>
+      ]
+    },
+    "sameAs" : [
+<?php
+if (strlen($same_as) < 3 && strlen($same_as2) < 3) {
+    echo '"No equivalency mapped for this person."'."\n";
+}
+if (strlen($same_as) > 3 && strlen($same_as2) > 3) {
+    echo json_encode($same_as).",\n";
+    echo json_encode($same_as2);
+}
+if (strlen($same_as) > 3 && strlen($same_as2) < 3) {
+    echo json_encode($same_as)."\n";
+}
+if (strlen($same_as2) > 3 && strlen($same_as) < 3) {
+    echo json_encode($same_as2)."\n";
+}
+}//end initial while loop
+?>
+    ]
+  }
+}
+
