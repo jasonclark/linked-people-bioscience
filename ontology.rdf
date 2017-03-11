@@ -94,6 +94,14 @@
     <rdfs:label>AssessAction</rdfs:label>
     <rdfs:comment>The act of forming one's opinion, reaction or sentiment.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - CreateAction -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#create-action">
+    <!-- CreateAction is a subclassification of Action Type -->
+    <owl:equivalentClass rdf:resource="https://schema.org/CreateAction"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
+    <rdfs:label>CreateAction</rdfs:label>
+    <rdfs:comment>The act of deliberately creating/producing/generating/building a result out of the agent.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - InteractAction -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#interact-action">
     <!-- InteractAction is a subclassification of Action Type -->
