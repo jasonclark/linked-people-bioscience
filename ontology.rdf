@@ -70,6 +70,14 @@
     <rdfs:label>Book</rdfs:label>
     <rdfs:comment>A book is a set of written, printed, illustrated, or blank sheets, made of ink, paper, parchment, or other materials, fastened together to hinge at one side. A single sheet within a book is a leaf, and each side of a leaf is a page. A set of text-filled or illustrated pages produced in electronic format is known as an electronic book, or e-book.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Book Chapter-->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#book-chapter">
+    <!-- Book Chapter is a subclassification of document type -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Chapter_(books)"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:label>Book Chapter</rdfs:label>
+    <rdfs:comment>A chapter is one of the main divisions of a piece of writing of relative length, such as a book of prose, poetry, or law. A chapter book may have multiple chapters and can be referred to many things that may be the main topic of that specific chapter. In each case, chapters can be numbered or titled or both.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Essay -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#essay">
     <!-- Essay is a subclassification of document type -->
@@ -85,6 +93,14 @@
     <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
     <rdfs:label>Scholarly paper</rdfs:label>
     <rdfs:comment>In academic publishing, a paper is an academic work that is usually published in an academic journal. It contains original research results or reviews existing results.</rdfs:comment>
+  </owl:Class>
+  <!-- OWL Subclass Definition - White Paper -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#white-paper">
+    <!-- White Paper is a subclassification of document type -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/White_paper"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:label>White Paper</rdfs:label>
+    <rdfs:comment>A white paper is an authoritative report or guide that informs readers concisely about a complex issue and presents the issuing body's philosophy on the matter.</rdfs:comment>
   </owl:Class>
   <!-- Probable subclasses: Scholarly paper, Review article, Position paper, Working paper, Literature review, Thesis (Compilation thesis, Monograph), Specialized patent (biological, chemical), Book, Book chapter, Technical report, Pamphlet, Essay, White paper, Preprint, Poster session, Lab notes, Abstract, Dataset -->
   <!-- Additional Subclasses Under Development... -->
