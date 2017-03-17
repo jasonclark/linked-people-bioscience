@@ -78,6 +78,14 @@
     <rdfs:label>Book Chapter</rdfs:label>
     <rdfs:comment>A chapter is one of the main divisions of a piece of writing of relative length, such as a book of prose, poetry, or law. A chapter book may have multiple chapters and can be referred to many things that may be the main topic of that specific chapter. In each case, chapters can be numbered or titled or both.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Dataset -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#dataset">
+    <!-- Dataset is a subclassification of document type -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Data_set"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:label>Dataset</rdfs:label>
+    <rdfs:comment>A data set (or dataset) is a collection of data. The term data set may also be used more loosely, to refer to the data in a collection of closely related tables, corresponding to a particular experiment or event.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Essay -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#essay">
     <!-- Essay is a subclassification of document type -->
