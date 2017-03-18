@@ -9,7 +9,7 @@ $fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER
 $fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
 
 //assign value for title of page
-$pageTitle = 'Staff Directory &amp; Departments';
+$pageTitle = 'Staff Research Networks';
 //assign a page layout - choices include: no columns = fullWidth, left column = leftCol, and right column = rightCol
 $pageLayout = 'fullWidth';
 //declare filename for additional stylesheet variable - default is "none"
@@ -26,7 +26,7 @@ $customScript[1] = 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.mi
 <meta charset="utf-8"/>
 <meta http-equiv="x-ua-compatible" content="ie=edge"/>
 <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0" />
-<title><?php echo($pageTitle); ?>: Montana State University Library</title>
+<title><?php echo($pageTitle); ?>: Montana State University</title>
 <link rel="shortcut icon" href="/meta/img/msu_favicon.ico" />
 <link rel="canonical" href="<?php echo $protocol.$server.$path.'/'.$fileName; ?>"/>
 <link href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,6 @@ if ($customScript) {
 		<div id="main">
 			<div class="gutter"><a name="mainContent"></a>
 				<h2 class="mainHeading" id="about"><?php echo($pageTitle); ?></h2>
-<!--END OF CHANGE MAINHEADING ID -->
 				<div id="intro">
 					<div id="browseSearch">
 						<form name="searchform" action="search.php" method="get" class="searchPeople" id="search-form">
@@ -110,7 +109,7 @@ if ($customScript) {
 				<div class="liaison-block">
     				<p class="heading" >Browse by Liaison Area</p>
     				<p class="block" style="margin-left: 1em;"><a href="liaisons.php">I want help with...</a></p>
-  					<ul id="listColumns" class="toggle">
+  				<ul id="listColumns" class="toggle">
 <?php
 	//run and hold query data from type table for formats
 	$query = '
@@ -205,9 +204,6 @@ while ($row = $getTeam->fetch_object()) {
 						<li><a href="/contact.php">Contact Us</a></li>
 					</ul>
 				</div>
-
-
-
 
 			</div>
 			<!-- end gutter div -->
