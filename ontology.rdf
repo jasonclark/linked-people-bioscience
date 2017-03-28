@@ -94,6 +94,14 @@
     <rdfs:label>Essay</rdfs:label>
     <rdfs:comment>An essay is, generally, a piece of writing that gives the author's own argument and is commonly used as literary criticism, political manifestos, learned arguments, observations of daily life, recollections, and reflections of the author.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Lab Notebook -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#lab-notebook">
+    <!-- Lab Notebook is a subclassification of document type -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/page/Lab_notebook"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:label>Lab Notebook</rdfs:label>
+    <rdfs:comment>A laboratory notebook (colloq. lab notebook or lab book) is a primary record of research. Researchers use a lab notebook to document their hypotheses, experiments and initial analysis or interpretation of these experiments.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Scholarly Paper -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#scholarly-paper">
     <!-- Scholarly paper is a subclassification of document type -->
