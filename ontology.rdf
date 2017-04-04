@@ -182,6 +182,14 @@
     <rdfs:label>Bacteria</rdfs:label>
     <rdfs:comment>Bacteria (/bækˈtɪəriə/; singular: bacterium) constitute a large domain of prokaryotic microorganisms. Typically a few micrometres in length, bacteria have a number of shapes, ranging from spheres to rods and spirals. Bacteria were among the first life forms to appear on Earth, and are present in most of its habitats. Bacteria inhabit soil, water, acidic hot springs, radioactive waste, and the deep portions of Earth's crust. Bacteria also live in symbiotic and parasitic relationships with plants and animals.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Biotechnology -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#biotechnology">
+    <!-- Biotechnology is a subclassification of topic -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Biotechnology"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:label>Biotechnology</rdfs:label>
+    <rdfs:comment>Biotechnology is the use of living systems and organisms to develop or make products, or "any technological application that uses biological systems, living organisms or derivatives thereof, to make or modify products or processes for specific use".</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Fluid Dynamics -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#fluid-dynamics">
     <!-- Fluid dynamics is a subclassification of topic -->
