@@ -182,13 +182,21 @@
     <rdfs:label>Bacteria</rdfs:label>
     <rdfs:comment>Bacteria (/bækˈtɪəriə/; singular: bacterium) constitute a large domain of prokaryotic microorganisms. Typically a few micrometres in length, bacteria have a number of shapes, ranging from spheres to rods and spirals. Bacteria were among the first life forms to appear on Earth, and are present in most of its habitats. Bacteria inhabit soil, water, acidic hot springs, radioactive waste, and the deep portions of Earth's crust. Bacteria also live in symbiotic and parasitic relationships with plants and animals.</rdfs:comment>
   </owl:Class>
-  <!-- OWL Subclass Definition - Fluid dynamics -->
+  <!-- OWL Subclass Definition - Fluid Dynamics -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#fluid-dynamics">
     <!-- Fluid dynamics is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Fluid_dynamics"/>
     <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
-    <rdfs:label>Fluid dynamics</rdfs:label>
+    <rdfs:label>Fluid Dynamics</rdfs:label>
     <rdfs:comment>In physics, fluid dynamics is a subdiscipline of fluid mechanics that deals with fluid flow—the natural science of fluids (liquids and gases) in motion.</rdfs:comment>
+  </owl:Class>
+  <!-- OWL Subclass Definition - Microbial Ecology -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#microbial-ecology">
+    <!-- Microbial Ecology is a subclassification of topic -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Microbial_ecology"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:label>Microbial Ecology</rdfs:label>
+    <rdfs:comment>Microbial ecology (or environmental microbiology) is the ecology of microorganisms: their relationship with one another and with their environment. It concerns the three major domains of life—Eukaryota, Archaea, and Bacteria—as well as viruses.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Molecular Biology -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#molecular-biology">
