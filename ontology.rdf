@@ -190,6 +190,14 @@
     <rdfs:label>Biotechnology</rdfs:label>
     <rdfs:comment>Biotechnology is the use of living systems and organisms to develop or make products, or "any technological application that uses biological systems, living organisms or derivatives thereof, to make or modify products or processes for specific use".</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Eukaryote -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#eukaryote">
+    <!-- Eukaryote is a subclassification of topic -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Eukaryote"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:label>Eukaryote</rdfs:label>
+    <rdfs:comment>A eukaryote (yoo-KARR-ee-oht) is any organism whose cells contain a nucleus and other organelles enclosed within membranes. The defining feature that sets eukaryotic cells apart from prokaryotic cells (Bacteria and Archaea) is that they have membrane-bound organelles, especially the nucleus, which contains the genetic material, and is enclosed by the nuclear envelope.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Fluid Dynamics -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#fluid-dynamics">
     <!-- Fluid dynamics is a subclassification of topic -->
