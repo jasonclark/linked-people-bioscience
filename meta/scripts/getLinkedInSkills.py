@@ -39,6 +39,8 @@ def parse_source(uri):
 
     #for link in soup.find_all('a', attrs={'property':'about'}):
     for link in soup.find_all(class_='skill'):
+    #alternative class name for full linkedin pageview 
+    #for link in soup.find_all(class_='pv-skill-entity__skill-name'):
         #print('about data: \n' + link.get('href'))
         tagValue = link.string.strip('\r\n\t')
         print('skill data: \n' + tagValue)
