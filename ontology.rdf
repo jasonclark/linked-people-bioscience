@@ -214,6 +214,14 @@
     <rdfs:label>Hydrology</rdfs:label>
     <rdfs:comment>Hydrology is the scientific study of the movement, distribution, and quality of water on Earth and other planets, including the hydrologic cycle, water resources and environmental watershed sustainability.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Materials Science -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#materials-science">
+    <!-- Materials Science is a subclassification of topic -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Materials_science"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:label>Materials Science</rdfs:label>
+    <rdfs:comment>The interdisciplinary field of materials science, also commonly known as materials science and engineering, involves the discovery and design of new materials, with an emphasis on solids.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Microbial Ecology -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#microbial-ecology">
     <!-- Microbial Ecology is a subclassification of topic -->
