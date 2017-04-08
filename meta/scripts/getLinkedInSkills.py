@@ -3,20 +3,20 @@
 from bs4 import BeautifulSoup
 import csv
 import json
+import os
 import requests
-#import urllib
 import sys
+
+#cwd = os.getcwd()  # Get the current working directory (cwd)
+#files = os.listdir(cwd)  # Get all the files in that directory
+#print("Files in '%s': %s" % (cwd, files))
 
 #URI of the data source
 URI = sys.argv[1] if len(sys.argv) > 1 else 'https://arc.lib.montana.edu/ivan-doig/about.php'
-#URI = 'https://arc.lib.montana.edu/ivan-doig/about.php'
-#if len(sys.argv) > 1:
-    #URI = sys.argv[1]
 
 def parse_source(uri):
     request = requests.get(uri, headers={'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'})
     #request = requests.get(uri, headers={'User-Agent' : 'jasonclark.info indexing bot'})
-    #request = urllib.urlopen(uri).read()
 
     #check for HTTP codes other than 200
     if request.status_code != 200:
@@ -29,42 +29,43 @@ def parse_source(uri):
     #print soup.prettify()
     #print(soup.get_text())
 
-    title = soup.title.string
+    pageTitle = soup.title.string
+    pageFileName = pageTitle.replace(' ', '-').lower()
+    #personName = soup.select(".pv-top-card-section__name")
+    #personFileName = personName.replace(' ', '-')
 
-    print ('Page Title: \n' + title)
+    print ('Page Title: \n' + pageTitle)
+    #print ('Person: \n' + personName)
     print ('Page URL: \n' + uri)
 
     #set empty list for about json values
     skillList = [] 
 
-    #for link in soup.find_all('a', attrs={'property':'about'}):
     for link in soup.find_all(class_='skill'):
     #alternative class name for full linkedin pageview 
     #for link in soup.find_all(class_='pv-skill-entity__skill-name'):
-        #print('about data: \n' + link.get('href'))
         tagValue = link.string.strip('\r\n\t')
         print('skill data: \n' + tagValue)
         skillList.append({"skill": tagValue, "length": len(tagValue)})
-	
-    with open('json-schema-skill.txt', 'w') as outfile:
-        json.dump(skillList, outfile, indent = 4)
+    
+    #create json file if it doesn't exist, open and write parsed values into it
+    if not os.path.exists(pageTitle+'-skills.json'):
+        open(pageFileName+'-skills.json', 'w').close()
+    
+    with open(pageFileName+'-skills.json', 'r+') as jsonFile:
+        json.dump(skillList, jsonFile, indent = 4)
 
-    with open('json-schema-skill.csv', 'w') as outfile:
-        writeFile = csv.writer(outfile)
+    jsonFile.close()
+
+    #create csv file if it doesn't exist, open and write parsed values into it
+    if not os.path.exists(pageTitle+'-skills.csv'):
+        open(pageFileName+'-skills.csv', 'w').close()
+
+    with open(pageFileName+'-skills.csv', 'r+') as csvFile:
+        writeFile = csv.writer(csvFile)
         writeFile.writerow(skillList)
 
-    #set empty list for type json values
-    #typeList = []
-
-    #for dblink in soup.find_all('link', attrs={'property':'additionalType'}):
-    #for dblink in soup.find_all(property='additionalType'):
-        #print('additionalType data: \n' + dblink.get('resource'))
-        #print('additionalType data: \n' + dblink.string)
-	#print json.dumps(dblink.string, indent = 4)
-        #typeList.append({"type": dblink.string, "length":len(dblink.string)})
-
-    #with open('json-schema-types.txt', 'w') as outfile:
-        #json.dump(typeList, outfile, indent = 4)
+    csvFile.close()
 
 showResult = parse_source(URI)
 print showResult
