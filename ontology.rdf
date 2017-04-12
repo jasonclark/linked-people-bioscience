@@ -198,6 +198,14 @@
     <rdfs:label>Biotechnology</rdfs:label>
     <rdfs:comment>Biotechnology is the use of living systems and organisms to develop or make products, or "any technological application that uses biological systems, living organisms or derivatives thereof, to make or modify products or processes for specific use".</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Chemistry -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#chemistry">
+    <!-- Chemistry is a subclassification of topic -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Chemistry"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:label>Chemistry</rdfs:label>
+    <rdfs:comment>Chemistry is a branch of physical science that studies the composition, structure, properties and change of matter.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Eukaryote -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#eukaryote">
     <!-- Eukaryote is a subclassification of topic -->
