@@ -1,6 +1,8 @@
 --
--- Database: `people`
+-- Database: `linked_people_biosciences`
 --
+CREATE DATABASE IF NOT EXISTS `linked_people_biosciences` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `linked_people_biosciences`;
 
 -- --------------------------------------------------------
 
