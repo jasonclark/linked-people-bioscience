@@ -276,6 +276,13 @@
     <rdfs:label>Biochemistry</rdfs:label>
     <rdfs:comment>The study of chemical processes in living organisms</rdfs:comment>
   </owl:Class>
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#cell-culture">
+    <!-- Cell Culture is a subclassification of expertise -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Cell_culture"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:label>Cell Culture</rdfs:label>
+    <rdfs:comment>Cell culture is the process by which cells are grown under controlled conditions, generally outside of their natural environment.</rdfs:comment>
+  </owl:Class>
   <!-- Probable subclasses will be based on dbpedia entities -->
   <!-- Additional Subclasses Under Development... -->
 
