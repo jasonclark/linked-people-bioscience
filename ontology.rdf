@@ -269,6 +269,7 @@
     <rdfs:label>The researcher expertise</rdfs:label>
     <rdfs:comment>The class of all researcher expertise</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Biochemistry -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#biochemistry">
     <!-- Biochemistry is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Biochemistry"/>
@@ -276,12 +277,21 @@
     <rdfs:label>Biochemistry</rdfs:label>
     <rdfs:comment>The study of chemical processes in living organisms</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Cell Culture -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#cell-culture">
     <!-- Cell Culture is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Cell_culture"/>
     <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
     <rdfs:label>Cell Culture</rdfs:label>
     <rdfs:comment>Cell culture is the process by which cells are grown under controlled conditions, generally outside of their natural environment.</rdfs:comment>
+  </owl:Class>
+  <!-- OWL Subclass Definition - DNA Extraction -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#dna-extraction">
+    <!-- DNA Extraction is a subclassification of expertise -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/DNA_extraction"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:label>DNA Extraction</rdfs:label>
+    <rdfs:comment>DNA isolation (also referred to as DNA extraction) is a process of purification of DNA from sample using a combination of physical and chemical methods.</rdfs:comment>
   </owl:Class>
   <!-- Probable subclasses will be based on dbpedia entities -->
   <!-- Additional Subclasses Under Development... -->
