@@ -293,6 +293,14 @@
     <rdfs:label>DNA Extraction</rdfs:label>
     <rdfs:comment>DNA isolation (also referred to as DNA extraction) is a process of purification of DNA from sample using a combination of physical and chemical methods.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Molecular Cloning -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#molecular-cloning">
+    <!-- Molecular Cloning is a subclassification of expertise -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Molecular_cloning"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:label>Molecular Cloning</rdfs:label>
+    <rdfs:comment>Molecular cloning is a set of experimental methods in molecular biology that are used to assemble recombinant DNA molecules and to direct their replication within host organisms.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Polymerase chain reaction (PCR) -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#polymerase-chain-reaction">
     <!-- Polymerase chain reaction (PCR) is a subclassification of expertise -->
