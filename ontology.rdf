@@ -293,6 +293,14 @@
     <rdfs:label>DNA Extraction</rdfs:label>
     <rdfs:comment>DNA isolation (also referred to as DNA extraction) is a process of purification of DNA from sample using a combination of physical and chemical methods.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Polymerase chain reaction (PCR) -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#polymerase-chain-reaction">
+    <!-- Polymerase chain reaction (PCR) is a subclassification of expertise -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Polymerase_chain_reaction"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:label>Polymerase chain reaction (PCR)</rdfs:label>
+    <rdfs:comment>Polymerase chain reaction (PCR) is a technique used in molecular biology to amplify a single copy or a few copies of a segment of DNA across several orders of magnitude, generating thousands to millions of copies of a particular DNA sequence.</rdfs:comment>
+  </owl:Class>
   <!-- Probable subclasses will be based on dbpedia entities -->
   <!-- Additional Subclasses Under Development... -->
 
