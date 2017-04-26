@@ -293,6 +293,14 @@
     <rdfs:label>DNA Extraction</rdfs:label>
     <rdfs:comment>DNA isolation (also referred to as DNA extraction) is a process of purification of DNA from sample using a combination of physical and chemical methods.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Mathematical Modeling -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#mathematical-modeling">
+    <!-- Mathematical Modeling is a subclassification of expertise -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Mathematical-modeling"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:label>Mathematical Modeling</rdfs:label>
+    <rdfs:comment>A mathematical model is a description of a system using mathematical concepts and language. The process of developing a mathematical model is termed mathematical modeling.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Molecular Cloning -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#molecular-cloning">
     <!-- Molecular Cloning is a subclassification of expertise -->
