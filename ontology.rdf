@@ -293,6 +293,14 @@
     <rdfs:label>DNA Extraction</rdfs:label>
     <rdfs:comment>DNA isolation (also referred to as DNA extraction) is a process of purification of DNA from sample using a combination of physical and chemical methods.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Gel Electrophoresis -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#gel-electrophoresis">
+    <!-- Gel Electrophoresis is a subclassification of expertise -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Gel_electrophoresis"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:label>Gel Electrophoresis</rdfs:label>
+    <rdfs:comment>Gel electrophoresis is a method for separation and analysis of macromolecules (DNA, RNA and proteins) and their fragments, based on their size and charge.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Mathematical Modeling -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#mathematical-modeling">
     <!-- Mathematical Modeling is a subclassification of expertise -->
