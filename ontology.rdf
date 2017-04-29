@@ -269,6 +269,14 @@
     <rdfs:label>The researcher expertise</rdfs:label>
     <rdfs:comment>The class of all researcher expertise</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Algorithms -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#algorithms">
+    <!-- Algorithms is a subclassification of topic -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Algorithm"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:label>Algorithms</rdfs:label>
+    <rdfs:comment>In mathematics and computer science, an algorithm is a self-contained sequence of actions to be performed. Algorithms can perform calculation, data processing and automated reasoning tasks.</rdfs:comment>
+  </owl:Class>
   <!-- OWL Subclass Definition - Biochemistry -->
   <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#biochemistry">
     <!-- Biochemistry is a subclassification of expertise -->
