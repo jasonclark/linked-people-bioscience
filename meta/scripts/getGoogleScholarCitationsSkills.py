@@ -12,7 +12,7 @@ import sys
 #print("Files in '%s': %s" % (cwd, files))
 
 #URI of the data source
-URI = sys.argv[1] if len(sys.argv) > 1 else 'https://arc.lib.montana.edu/ivan-doig/about.php'
+URI = sys.argv[1] if len(sys.argv) > 1 else 'https://scholar.google.com/citations?user=2vZSuAwAAAAJ'
 
 def parse_source(uri):
     request = requests.get(uri, headers={'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'})
