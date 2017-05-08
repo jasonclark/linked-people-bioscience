@@ -22,7 +22,7 @@ A prototype software project that allows one to visualize research and networks 
 
 ## Contribute
 
-PRs accepted.
+PRs accepted. Contributors must adhere to the [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/). We have also have a [Code of Conduct](https://github.com/jasonclark/linked-people-bioscience/blob/master/CODE_OF_CONDUCT.md) that highlights our expectations for all contributors.
 
 ## License
 
