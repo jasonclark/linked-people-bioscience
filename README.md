@@ -39,12 +39,14 @@ Crafted with :heart: by [Jason A. Clark](https://www.jasonclark.info) sameAs [@j
 
 ## Install
 
-```Download and install sample files. Dataset not included.
+Download and install sample files. Dataset not included.
+```
 ```
 
 ## Usage
 
-```Can be used for testing weak ties in a network. Testing and validation of a biosciences ontology.
+Can be used for testing weak ties in a network. Testing and validation of a biosciences ontology.
+```
 ```
 
 ## License
