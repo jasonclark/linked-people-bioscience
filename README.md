@@ -5,9 +5,9 @@ A prototype software project that allows one to visualize research and networks 
 
 - [Contribute](#contribute)
 - [Technology](#technology)
-- [People](#people)
 - [Install](#install)
 - [Usage](#usage)
+- [People](#people)
 - [License](#license)
 
 ## Contribute
@@ -33,10 +33,6 @@ Contributors must adhere to the [Mozilla Community Participation Guidelines](htt
 * PHP
 * D3.js
 
-## People
-
-Crafted with :heart: by [Jason A. Clark](https://www.jasonclark.info) sameAs [@jaclark](https://twitter.com/jaclark).
-
 ## Install
 
 Download and install sample files. Dataset not included.
@@ -48,6 +44,10 @@ Download and install sample files. Dataset not included.
 Can be used for testing weak ties in a network. Testing and validation of a biosciences ontology.
 ```
 ```
+
+## People
+
+Crafted with :heart: by [Jason A. Clark](https://www.jasonclark.info) sameAs [@jaclark](https://twitter.com/jaclark).
 
 ## License
 
