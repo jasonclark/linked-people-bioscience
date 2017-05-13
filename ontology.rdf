@@ -333,6 +333,14 @@
     <rdfs:label>Polymerase chain reaction (PCR)</rdfs:label>
     <rdfs:comment>Polymerase chain reaction (PCR) is a technique used in molecular biology to amplify a single copy or a few copies of a segment of DNA across several orders of magnitude, generating thousands to millions of copies of a particular DNA sequence.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Time Series Analysis -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#time-series-analysis">
+    <!-- Time Series Analysis is a subclassification of expertise -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Time_series"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:label>Time Series Analysis</rdfs:label>
+    <rdfs:comment>A time series is a series of data points indexed (or listed or graphed) in time order. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.</rdfs:comment>
+  </owl:Class>
   <!-- Probable subclasses will be based on dbpedia entities -->
   <!-- Additional Subclasses Under Development... -->
 
