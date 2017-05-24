@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { 
+  font: 14px helvetica neue, helvetica, arial, sans-serif;
+}
+#cy {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#eat {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  font-size: 1em;
+  z-index: -1;
+  color: #c88;
+}
+</style>
+<meta charset=utf-8 />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+<title>Images</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.1.1/cytoscape.min.js"></script>
+</head>
+<body>
+<div id="cy"></div>
+<!-- Load appplication code at the end to ensure DOM is loaded -->
+<script src="network.js"></script>
+</body>
+</html>
