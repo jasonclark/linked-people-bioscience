@@ -341,6 +341,14 @@
     <rdfs:label>Time Series Analysis</rdfs:label>
     <rdfs:comment>A time series is a series of data points indexed (or listed or graphed) in time order. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.</rdfs:comment>
   </owl:Class>
+  <!-- OWL Subclass Definition - Wastewater Treatement -->
+  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#wastewater-treatment">
+    <!-- Wastewater Treatment is a subclassification of expertise -->
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Wastewater_treatment"/>
+    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:label>Wastewater_treatment</rdfs:label>
+    <rdfs:comment>Wastewater treatment is a process used to convert wastewater - which is water no longer needed or suitable for its most recent use - into an effluent that can be either returned to the water cycle with minimal environmental issues or reused.</rdfs:comment>
+  </owl:Class>
   <!-- Probable subclasses will be based on dbpedia entities -->
   <!-- Additional Subclasses Under Development... -->
 
