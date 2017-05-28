@@ -1,5 +1,5 @@
 # Linked People Bioscience 
-A prototype software project that allows one to visualize research and networks of expertise based on researcher interests and research collaborations.prototype software that allows one to visualize researcher interests and research collaborations. In this phase of the project, we are working with the Montana State University (MSU) - Center For Biofilm Engineering (CBE) to describe/visualize Bioscience data. This work applies a methodology for describing researcher interests and research collaborations through the application of linked open data (LOD) which has an impact on the visibility of these researchers in search engines.
+A prototype software project that allows one to visualize research and networks of expertise based on researcher interests and research collaborations. In this phase of the project, we are working with the Montana State University (MSU) - Center For Biofilm Engineering (CBE) to describe/visualize Bioscience data. This work applies a methodology for describing researcher interests and research collaborations through the application of linked open data (LOD) which has an impact on the visibility of these researchers in search engines.
 
 ## Table of Contents
 
