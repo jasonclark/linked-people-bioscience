@@ -1,0 +1,75 @@
+<?php
+//set correct content-type for json output
+header('Content-Type: application/json');
+
+//pass database parameters and connect to database
+include_once '../meta/assets/database-params.inc';
+//bring special functions and utilities onto page
+include '../meta/inc/utilities.php';
+
+//check if the $id variable was passed in url, escape the string for mysql, and validate that it is a numeric value - pass id value to select record
+if (isset($_GET['id']) and is_numeric($_GET['id'])) {
+  $id = strip_tags($connectLibstaff->real_escape_string((int)$_GET['id']));
+} else {
+  echo 'Query type not supported.';
+  exit;
+}
+
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//request selected staff data fields
+$query = "SELECT * FROM linked_people.person WHERE person_status = 'a' AND person_id='$id'";
+$getPerson = $connectLibstaff->query($query);
+
+if ($getPerson->num_rows == 0) {
+  header("HTTP/1.0 404 Not Found", true, 404);
+  readfile("https://lib.montana.edu/error.php");
+  exit();
+}
+//Display selected staff entry fields in a list
+while ($row = $getPerson->fetch_object()) {
+  $person_id = stripslashes($row->person_id);
+  $person_fname = stripslashes($row->givenName);
+  $person_lname = stripslashes($row->familyName);
+  $person_name = stripslashes($row->givenName . ' ' . $row->familyName);
+  $person_title = stripslashes($row->jobTitle);
+  $person_dept = stripslashes($row->memberOf);
+  $person_affiliation = stripslashes($row->affiliation);
+  $person_image = $protocol.$server.$path.'/meta/img/photos/'.stripslashes($row->image);
+  $person_identifier = stripslashes(htmlentities($row->identifier));
+?>
+{
+  "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#person'); ?>,
+  "name": "<?php echo $person_name; ?>",
+  "description": "Researcher network for <?php echo $person_name; ?>",
+  "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id); ?>,
+  "children": [
+<?php
+//get person's colleagues
+$query = "SELECT person_id FROM linked_people.person WHERE person_status = 'a' AND memberOf='$person_dept'";
+$getColleagues = $connectLibstaff->query($query);
+if ($getColleagues->num_rows == 0) {
+?>
+    "No colleagues assigned to this person."
+<?php
+}
+$separator = "";
+while ($row = $getColleagues->fetch_object()) {
+  $colleague_id = $row->person_id;
+  $colleague_url = json_encode($protocol.$server.$path.'/'.$colleague_id);
+  //print list of colleagues
+  echo $separator.'{"name":'.$colleague_url;
+  $separator = "},\n";
+}
+}
+?>
+    }
+  ]
+}
