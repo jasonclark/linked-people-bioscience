@@ -9,7 +9,7 @@ include '../meta/inc/utilities.php';
 
 //check if the $id variable was passed in url, escape the string for mysql, and validate that it is a numeric value - pass id value to select record
 if (isset($_GET['id']) and is_numeric($_GET['id'])) {
-  $id = strip_tags($connectLibstaff->real_escape_string((int)$_GET['id']));
+  $id = strip_tags($connectLinkedpeople->real_escape_string((int)$_GET['id']));
 } else {
   echo 'Query type not supported.';
   exit;
@@ -26,7 +26,7 @@ $fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXT
 
 //request selected staff data fields
 $query = "SELECT * FROM linked_people.person WHERE person_status = 'a' AND person_id='$id'";
-$getPerson = $connectLibstaff->query($query);
+$getPerson = $connectLinkedpeople->query($query);
 
 if ($getPerson->num_rows == 0) {
   header("HTTP/1.0 404 Not Found", true, 404);
@@ -54,7 +54,7 @@ while ($row = $getPerson->fetch_object()) {
 <?php
 //get person's colleagues
 $query = "SELECT person_id FROM linked_people.person WHERE person_status = 'a' AND memberOf='$person_dept'";
-$getColleagues = $connectLibstaff->query($query);
+$getColleagues = $connectLinkedpeople->query($query);
 if ($getColleagues->num_rows == 0) {
 ?>
     "No colleagues assigned to this person."
