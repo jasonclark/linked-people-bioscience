@@ -41,7 +41,7 @@ def parse_source(uri):
     #set empty list for about json values
     skillList = [] 
 
-    for link in soup.find_all('a', attrs={'data-bind' : 'True'}):
+    for link in soup.select("div.card.entity-section p a"):
     #alternative class name for full linkedin pageview 
     #for link in soup.find_all(class_='pv-skill-entity__skill-name'):
         tagValue = link.string.strip('\r\n\t')

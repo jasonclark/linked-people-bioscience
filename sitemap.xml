@@ -1,0 +1,43 @@
+<?php
+//declare content type before any text is sent to browser
+header('Content-type: text/xml');
+//make XML declaration
+echo ("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
+?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+<?php $indexFile = '/usr/local/apache2/htdocs/linked-people/index.html'; ?>
+        <loc><?php echo 'https://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/index.html'; ?></loc>
+        <lastmod><?php echo date("Y-m-d\TH:i:sP", filemtime($indexFile)); ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+</url>
+<?php
+//pass database parameters and connect to database
+include_once './meta/assets/database-params.inc';
+
+// retrieve items from database
+$query = "SELECT person_id,updated FROM linked_people.person GROUP BY person_id ORDER BY person_id ASC";
+$getRecords = $connectLinkedpeople->query($query);
+
+if (!$getRecords) { die('<p>Error retrieving items from database!</p>'); }
+
+// store items in array, strip out html tags, generate valid date stamp
+while ($row = $getRecords->fetch_object()) {
+	$person_id = $row->person_id;
+	$dateW3C = new DateTime($row->updated);
+	$updated = $dateW3C->format('Y-m-d\TH:i:sP');
+
+
+// output to client
+?>
+<url>
+        <loc><?php echo 'https://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']); ?>/about/<?php echo $person_id; ?></loc>
+        <lastmod><?php echo $updated; ?></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+</url>
+<?php
+  }
+?>
+</urlset>

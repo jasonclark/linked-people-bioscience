@@ -55,104 +55,61 @@ while ($row = $getPerson->fetch_object()) {
 ?>
 {
   "@context": "https://schema.org/",
-  "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id); ?>,
-  "@type": "ProfilePage",
-  "isPartOf": {
-    "@id": <?php echo json_encode($protocol.$server.$path.'/'); ?>,
-    "@type": [
-      "Website", 
-      "CollectionPage"
-    ], 
-    "name": "Linked Bioscience - Montana State University (MSU) Library"
-  },
-  "name": "About - <?php echo $person_name; ?>",
-  "description": "Profile page describing <?php echo $person_name; ?>",
-  "publisher": {
-    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#organization'); ?>
-  },
-  "reviewedBy": {
-    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#organization'); ?>
-  },
-  "license": "https://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US",
+  "@id": <?php echo json_encode($protocol.$server.$path.'/'.$fileName.'?id='.$id); ?>,
+  "@type": "Person",
+  "name": "<?php echo $person_name; ?>",
+  "description": "Description of <?php echo $person_name; ?>'s skills, expertise, and networks",
   "url": <?php echo json_encode($protocol.$server.$path.'/'.$id); ?>,
-  "significantLink": <?php echo json_encode($protocol.$server.$path.'/'.$id); ?>,
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement":[
-    {
-      "@type": "ListItem",
-      "position": "1",
-      "item": {
-        "@type": "WebSite",
-        "@id": <?php echo json_encode($protocol.$server.'/'); ?>,
-        "name": "Home"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": "2",
-      "item": {
-        "@type": "WebPage",
-        "@id": <?php echo json_encode($protocol.$server.$path.'/'); ?>,
-        "name": "People"
-      }
-    }
-    ]
-  },
-  "mainEntity": {
-    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#person'); ?>,
-    "@type": "Person",
-    "name": "<?php echo $person_name; ?>",
-    "jobTitle": "<?php echo $person_title; ?>",
-    "memberOf": "<?php echo $person_dept; ?>",
-    "email": "<?php echo $person_email; ?>",
-    "image": <?php echo json_encode($person_image); ?>,
-    "telephone": "<?php echo $person_phone; ?>",
+  "jobTitle": "<?php echo $person_title; ?>",
+  "memberOf": "<?php echo $person_dept; ?>",
+  "email": "<?php echo $person_email; ?>",
+  "image": <?php echo json_encode($person_image); ?>,
+  "telephone": "<?php echo $person_phone; ?>",
 <?php
 if (strlen($person_web) > 3) {
 ?>
-    "url": "<?php echo $person_web; ?>",
+  "url": "<?php echo $person_web; ?>",
 <?php
 }
 ?>
-    "affiliation": "<?php echo $person_affiliation; ?>",
-    "worksFor": {
-      "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#organization'); ?>,
-      "@type": "EducationalOrganization",
-      "name": "<?php echo $person_affiliation; ?> Library",
-      "sameAs": [ 
-        <?php echo json_encode('https://dbpedia.org/resource/Montana_State_University_Library'); ?>,
-        <?php echo json_encode('http://www.freebase.com/m/0j3y9r1'); ?>,
-        <?php echo json_encode('https://www.wikidata.org/entity/Q15255419'); ?>,
-        <?php echo json_encode('https://www.worldcat.org/wcr/organization/data/56245'); ?>
-      ],
-      "member": {
-        "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#member'); ?>,
-        "@type": "OrganizationRole",
-        "name": "<?php echo $person_name; ?>",
-        "sameAs": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#person'); ?>,
-        "roleName": "<?php echo $person_title; ?>"
-      }
-    },
-    "address": {
-      "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#address'); ?>,
-      "@type": "PostalAddress",
-      "streetAddress": "P.O. Box 173320",
-      "addressLocality": "Bozeman",
-      "addressRegion": "MT",
-      "postalCode": "59717-3320"
-    },
-    "knows": {
-      "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#colleague'); ?>,
-      "@type": "Person",
-      "colleague": [
+  "affiliation": "<?php echo $person_affiliation; ?>",
+  "worksFor": {
+    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#organization'); ?>,
+    "@type": "EducationalOrganization",
+    "name": "<?php echo $person_affiliation; ?> Library",
+    "sameAs": [ 
+      <?php echo json_encode('https://dbpedia.org/resource/Montana_State_University_Library'); ?>,
+      <?php echo json_encode('http://www.freebase.com/m/0j3y9r1'); ?>,
+      <?php echo json_encode('https://www.wikidata.org/entity/Q15255419'); ?>,
+      <?php echo json_encode('https://www.worldcat.org/wcr/organization/data/56245'); ?>
+    ],
+    "member": {
+      "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#member'); ?>,
+      "@type": "OrganizationRole",
+      "name": "<?php echo $person_name; ?>",
+      "sameAs": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#person'); ?>,
+      "roleName": "<?php echo $person_title; ?>"
+    }
+  },
+  "address": {
+    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#address'); ?>,
+    "@type": "PostalAddress",
+    "streetAddress": "P.O. Box 173320",
+    "addressLocality": "Bozeman",
+    "addressRegion": "MT",
+    "postalCode": "59717-3320"
+  },
+  "knows": {
+    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#colleague'); ?>,
+    "@type": "Person",
+    "colleague": [
 <?php
 //get person's colleagues
 $query = "SELECT person_id FROM linked_people.person WHERE person_status = 'a' AND memberOf='$person_dept'";
 $getColleagues = $connectLinkedpeople->query($query);
 if ($getColleagues->num_rows == 0) {
 ?>
-      "No colleagues assigned to this person."
+    "No colleagues assigned to this person."
 <?php
 }
 $separator = "";
@@ -164,12 +121,12 @@ while ($row = $getColleagues->fetch_object()) {
   $separator = ",\n";
 }
 ?>
-      ]
-    },
-    "makesOffer": {
-      "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#offer'); ?>,
-      "@type": "Offer",
-      "category": [
+    ]
+  },
+  "makesOffer": {
+    "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#offer'); ?>,
+    "@type": "Offer",
+    "category": [
 <?php
 //get person's expertise topics
 $query = "SELECT *
@@ -196,9 +153,9 @@ while ($row = $getPersonExpertise->fetch_object()) {
   $separator = ",\n";
 }
 ?>
-      ]
-    },
-    "sameAs" : [
+    ]
+  },
+  "sameAs" : [
 <?php
 if (strlen($person_identifier) < 3 && strlen($person_same_as) < 3) {
     echo '"No equivalency mapped for this person."'."\n";
@@ -215,6 +172,5 @@ if (strlen($person_same_as) > 3 && strlen($person_identifier) < 3) {
 }
 }//end initial while loop
 ?>
-    ]
-  }
+  ]
 }
