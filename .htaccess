@@ -3,7 +3,7 @@
 #https://httpd.apache.org/docs/current/mod/mod_mime.html#addhandler
 #AddType application/x-httpd-php .html .json .rdf
 AddHandler php5-script .html .rdf .json
-<FilesMatch "^(sitemap)\.xml$">
+<FilesMatch "^(sitemap.*)\.xml$">
 AddHandler php5-script .xml
 </FilesMatch>
 
