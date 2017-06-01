@@ -16,7 +16,7 @@ PRs accepted and welcome. [Issues](https://github.com/jasonclark/linked-people-b
 
 Initial help and contributions include:
 
-* Conception and design of network visualization - Javascript 
+* [Conception and design of network visualization](https://github.com/jasonclark/linked-people-bioscience/issues/8) 
 * [Redesign of researcher profile landing pages](https://github.com/jasonclark/linked-people-bioscience/issues/7)
 * [Adding to Text mining scripts for additional vocabulary/ontology terms](https://github.com/jasonclark/linked-people-bioscience/tree/master/meta/scripts)
 * [Proofing/Finalizing the ontology](https://github.com/jasonclark/linked-people-bioscience/blob/master/ontology.rdf) - the vocab for describing the researchers and their work
