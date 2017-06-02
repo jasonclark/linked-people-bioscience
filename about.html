@@ -236,10 +236,10 @@ if (!empty($person_libguides_link)) {
 ?>
   </section>
   <section>
-  <dl class="liaison">
-    <dt>Liaison Role(s)</dt>
+  <dl class="subjects">
+    <dt>Network subject(s)</dt>
 <?php
-//get person's liaison topics
+//get person's network subjects
 $query = "SELECT *
 FROM linked_people.person, linked_people.interact_action, linked_people.interact_action_match
 WHERE person.person_id = '$id'
@@ -250,7 +250,7 @@ AND person.person_status =  'a'";
 $getPersonLiaison = $connectLinkedpeople->query($query);
 if ($getPersonLiaison->num_rows == 0) {
 ?>
-    <dd>No liaison role(s) for this person. <a href="/contact/">Suggest one?</a></dd>
+    <dd>No network subject(s) for this person. <a href="/contact/">Suggest one?</a></dd>
 <?php
 }
   //Display selected staff entry fields in a list
@@ -299,7 +299,7 @@ while ($row = $getPersonExpertise->fetch_object()) {
 <?php
 if (strlen($person_vita) > 3) {
 ?>
-    <dt>More Information</dt>
+    <dt>Visualizations + Data</dt>
     <dd><a class="vita" title="vita of <?php echo $person_name; ?>" href="<?php echo $person_vita; ?>">Vita</a></dd>
 <?php
 }
