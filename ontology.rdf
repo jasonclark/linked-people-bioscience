@@ -4,348 +4,348 @@
   xmlns:owl="http://www.w3.org/2002/07/owl#"
   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <!-- OWL Header Example -->
-  <owl:Ontology rdf:about="https://www.lib.montana.edu/ontology/biosciences">
+  <owl:Ontology rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf">
     <dc:title>Biosciences Ontology</dc:title>
     <dc:description>An ontology written for the Semantic Modeling of Researcher Networks: Applying Linked Open Data for Discovery project based on a partnership with the Montana State University (MSU) - Center For Biofilm Engineering (CBE) to describe Bioscience data</dc:description>
   </owl:Ontology>
   <!-- OWL Class Definition - Person Type -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#person">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person">
   <owl:equivalentClass rdf:resource="https://schema.org/Person"/>
     <rdfs:label>The person or agent in the research act.</rdfs:label>
     <rdfs:comment>The person and subject of the research act including roles</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Agent -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#agent">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#agent">
     <!-- Agent is a subclassification of Person Type -->
     <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q278919"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
     <rdfs:label>Agent</rdfs:label>
     <rdfs:comment>The direct performer or driver of the action (animate or inanimate).</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Author -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#author">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#author">
     <!-- Author is a subclassification of Person Type -->
     <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q482980"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
     <rdfs:label>Author</rdfs:label>
     <rdfs:comment>The creator of an original spoken or written work</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Editor -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#editor">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#editor">
     <!-- Editor is a subclassification of Person Type -->
     <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q1607826"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
     <rdfs:label>Editor</rdfs:label>
     <rdfs:comment>A person who edits texts or publications.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Publisher -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#publisher">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#publisher">
     <!-- Publisher is a subclassification of Person Type -->
     <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q5246046"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
     <rdfs:label>Publisher</rdfs:label>
     <rdfs:comment>A person who publishes and distributes academic research and scholarship.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Sponsor -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#sponsor">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#sponsor">
     <!-- Sponsor is a subclassification of Person Type -->
     <owl:equivalentClass rdf:resource="https://www.wikidata.org/entity/Q152478"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#person"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
     <rdfs:label>Sponsor</rdfs:label>
     <rdfs:comment>A person or agent who offers commercial support for an event, activity, or person.</rdfs:comment>
   </owl:Class>
   <!-- Probable subclasses will be based on https://schema.org/Person properties and link to wikidata entities -->
   <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Document Type -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#document">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document">
     <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/type"/>
     <rdfs:label>The research document type</rdfs:label>
     <rdfs:comment>The class of all research document types or genres</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Book -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#book">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#book">
     <!-- Book is a subclassification of document type -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Book"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>
     <rdfs:label>Book</rdfs:label>
     <rdfs:comment>A book is a set of written, printed, illustrated, or blank sheets, made of ink, paper, parchment, or other materials, fastened together to hinge at one side. A single sheet within a book is a leaf, and each side of a leaf is a page. A set of text-filled or illustrated pages produced in electronic format is known as an electronic book, or e-book.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Book Chapter-->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#book-chapter">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#book-chapter">
     <!-- Book Chapter is a subclassification of document type -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Chapter_(books)"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>
     <rdfs:label>Book Chapter</rdfs:label>
     <rdfs:comment>A chapter is one of the main divisions of a piece of writing of relative length, such as a book of prose, poetry, or law. A chapter book may have multiple chapters and can be referred to many things that may be the main topic of that specific chapter. In each case, chapters can be numbered or titled or both.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Dataset -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#dataset">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#dataset">
     <!-- Dataset is a subclassification of document type -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Data_set"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>
     <rdfs:label>Dataset</rdfs:label>
     <rdfs:comment>A data set (or dataset) is a collection of data. The term data set may also be used more loosely, to refer to the data in a collection of closely related tables, corresponding to a particular experiment or event.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Essay -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#essay">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#essay">
     <!-- Essay is a subclassification of document type -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Essay"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>
     <rdfs:label>Essay</rdfs:label>
     <rdfs:comment>An essay is, generally, a piece of writing that gives the author's own argument and is commonly used as literary criticism, political manifestos, learned arguments, observations of daily life, recollections, and reflections of the author.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Lab Notebook -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#lab-notebook">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#lab-notebook">
     <!-- Lab Notebook is a subclassification of document type -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/page/Lab_notebook"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>
     <rdfs:label>Lab Notebook</rdfs:label>
     <rdfs:comment>A laboratory notebook (colloq. lab notebook or lab book) is a primary record of research. Researchers use a lab notebook to document their hypotheses, experiments and initial analysis or interpretation of these experiments.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Scholarly Paper -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#scholarly-paper">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#scholarly-paper">
     <!-- Scholarly paper is a subclassification of document type -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Academic_publishing#Scholarly_paper"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>
     <rdfs:label>Scholarly paper</rdfs:label>
     <rdfs:comment>In academic publishing, a paper is an academic work that is usually published in an academic journal. It contains original research results or reviews existing results.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - White Paper -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#white-paper">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#white-paper">
     <!-- White Paper is a subclassification of document type -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/White_paper"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#document"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>
     <rdfs:label>White Paper</rdfs:label>
     <rdfs:comment>A white paper is an authoritative report or guide that informs readers concisely about a complex issue and presents the issuing body's philosophy on the matter.</rdfs:comment>
   </owl:Class>
   <!-- Probable subclasses: Scholarly paper, Review article, Position paper, Working paper, Literature review, Thesis (Compilation thesis, Monograph), Specialized patent (biological, chemical), Book, Book chapter, Technical report, Pamphlet, Essay, White paper, Preprint, Poster session, Lab notes, Abstract, Dataset -->
   <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Action Type -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#action">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#action">
     <owl:equivalentClass rdf:resource="https://schema.org/Action"/>
     <rdfs:label>The action associated with a research act</rdfs:label>
     <rdfs:comment>The class of all research actions</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - AssessAction -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#assess-action">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#assess-action">
     <!-- AssessAction is a subclassification of Action Type -->
     <owl:equivalentClass rdf:resource="https://schema.org/AssessAction"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#action"/>
     <rdfs:label>AssessAction</rdfs:label>
     <rdfs:comment>The act of forming one's opinion, reaction or sentiment.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - CreateAction -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#create-action">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#create-action">
     <!-- CreateAction is a subclassification of Action Type -->
     <owl:equivalentClass rdf:resource="https://schema.org/CreateAction"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#action"/>
     <rdfs:label>CreateAction</rdfs:label>
     <rdfs:comment>The act of deliberately creating/producing/generating/building a result out of the agent.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - InteractAction -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#interact-action">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#interact-action">
     <!-- InteractAction is a subclassification of Action Type -->
     <owl:equivalentClass rdf:resource="https://schema.org/InteractAction"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#action"/>
     <rdfs:label>InteractAction</rdfs:label>
     <rdfs:comment>The act of interacting with another person or organization.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - WriteAction -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#write-action">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#write-action">
     <!-- WriteAction is a subclassification of Action Type -->
     <owl:equivalentClass rdf:resource="https://schema.org/WriteAction"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#action"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#action"/>
     <rdfs:label>WriteAction</rdfs:label>
     <rdfs:comment>The act of authoring written creative content.</rdfs:comment>
   </owl:Class>
   <!-- Probable subclasses will be based on https://schema.org/Action -->
   <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Topic Type -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#topic">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic">
     <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/subject"/>
     <rdfs:label>The research or researcher topic</rdfs:label>
     <rdfs:comment>The class of all research or researcher topics</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Archaea -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#archaea">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#archaea">
     <!-- Archaea is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Archaea"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Archaea</rdfs:label>
     <rdfs:comment>The Archaea constitute a domain or kingdom of single-celled microorganisms. These microbes are prokaryotes, meaning that they have no cell nucleus or any other membrane-bound organelles in their cells.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Bacteria -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#bacteria">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#bacteria">
     <!-- Bacteria is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Bacteria"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Bacteria</rdfs:label>
     <rdfs:comment>Bacteria (/bækˈtɪəriə/; singular: bacterium) constitute a large domain of prokaryotic microorganisms. Typically a few micrometres in length, bacteria have a number of shapes, ranging from spheres to rods and spirals. Bacteria were among the first life forms to appear on Earth, and are present in most of its habitats. Bacteria inhabit soil, water, acidic hot springs, radioactive waste, and the deep portions of Earth's crust. Bacteria also live in symbiotic and parasitic relationships with plants and animals.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Biofilm -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#biofilm">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#biofilm">
     <!-- Biofilm is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Biofilm"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Biofilm</rdfs:label>
     <rdfs:comment>A biofilm is any group of microorganisms in which cells stick to each other and often these cells adhere to a surface. These adherent cells are frequently embedded within a self-produced matrix of extracellular polymeric substance (EPS). Biofilms may form on living or non-living surfaces and can be prevalent in natural, industrial and hospital settings.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Biotechnology -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#biotechnology">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#biotechnology">
     <!-- Biotechnology is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Biotechnology"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Biotechnology</rdfs:label>
     <rdfs:comment>Biotechnology is the use of living systems and organisms to develop or make products, or "any technological application that uses biological systems, living organisms or derivatives thereof, to make or modify products or processes for specific use".</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Chemistry -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#chemistry">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#chemistry">
     <!-- Chemistry is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Chemistry"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Chemistry</rdfs:label>
     <rdfs:comment>Chemistry is a branch of physical science that studies the composition, structure, properties and change of matter.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Eukaryote -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#eukaryote">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#eukaryote">
     <!-- Eukaryote is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Eukaryote"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Eukaryote</rdfs:label>
     <rdfs:comment>A eukaryote (yoo-KARR-ee-oht) is any organism whose cells contain a nucleus and other organelles enclosed within membranes. The defining feature that sets eukaryotic cells apart from prokaryotic cells (Bacteria and Archaea) is that they have membrane-bound organelles, especially the nucleus, which contains the genetic material, and is enclosed by the nuclear envelope.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Fluid Dynamics -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#fluid-dynamics">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#fluid-dynamics">
     <!-- Fluid dynamics is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Fluid_dynamics"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Fluid Dynamics</rdfs:label>
     <rdfs:comment>In physics, fluid dynamics is a subdiscipline of fluid mechanics that deals with fluid flow—the natural science of fluids (liquids and gases) in motion.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Hydrology -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#hydrology">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#hydrology">
     <!-- Hydrology is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Hydrology"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Hydrology</rdfs:label>
     <rdfs:comment>Hydrology is the scientific study of the movement, distribution, and quality of water on Earth and other planets, including the hydrologic cycle, water resources and environmental watershed sustainability.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Materials Science -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#materials-science">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#materials-science">
     <!-- Materials Science is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Materials_science"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Materials Science</rdfs:label>
     <rdfs:comment>The interdisciplinary field of materials science, also commonly known as materials science and engineering, involves the discovery and design of new materials, with an emphasis on solids.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Microbial Ecology -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#microbial-ecology">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#microbial-ecology">
     <!-- Microbial Ecology is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Microbial_ecology"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Microbial Ecology</rdfs:label>
     <rdfs:comment>Microbial ecology (or environmental microbiology) is the ecology of microorganisms: their relationship with one another and with their environment. It concerns the three major domains of life—Eukaryota, Archaea, and Bacteria—as well as viruses.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Molecular Biology -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#molecular-biology">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#molecular-biology">
     <!-- Molecular Biology is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Molecular_biology"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Molecular Biology</rdfs:label>
     <rdfs:comment>Molecular biology concerns the molecular basis of biological activity between biomolecules in the various systems of a cell, including the interactions between DNA, RNA and proteins and their biosynthesis, as well as the regulation of these interactions.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Viscosity -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#viscosity">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#viscosity">
     <!-- Viscosity is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Viscosity"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Viscosity</rdfs:label>
     <rdfs:comment>The viscosity of a fluid is a measure of its resistance to gradual deformation by shear stress or tensile stress. For liquids, it corresponds to the informal concept of "thickness".</rdfs:comment>
   </owl:Class>
   <!-- Additional Subclasses Under Development... -->
   <!-- OWL Class Definition - Expertise Type -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#expertise">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise">
     <owl:equivalentClass rdf:resource="http://purl.org/dc/terms/subject"/>
     <rdfs:label>The researcher expertise</rdfs:label>
     <rdfs:comment>The class of all researcher expertise</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Algorithms -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#algorithms">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#algorithms">
     <!-- Algorithms is a subclassification of topic -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Algorithm"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#topic"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>
     <rdfs:label>Algorithms</rdfs:label>
     <rdfs:comment>In mathematics and computer science, an algorithm is a self-contained sequence of actions to be performed. Algorithms can perform calculation, data processing and automated reasoning tasks.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Biochemistry -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#biochemistry">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#biochemistry">
     <!-- Biochemistry is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Biochemistry"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
     <rdfs:label>Biochemistry</rdfs:label>
     <rdfs:comment>The study of chemical processes in living organisms</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Cell Culture -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#cell-culture">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#cell-culture">
     <!-- Cell Culture is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Cell_culture"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
     <rdfs:label>Cell Culture</rdfs:label>
     <rdfs:comment>Cell culture is the process by which cells are grown under controlled conditions, generally outside of their natural environment.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - DNA Extraction -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#dna-extraction">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#dna-extraction">
     <!-- DNA Extraction is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/DNA_extraction"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
     <rdfs:label>DNA Extraction</rdfs:label>
     <rdfs:comment>DNA isolation (also referred to as DNA extraction) is a process of purification of DNA from sample using a combination of physical and chemical methods.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Gel Electrophoresis -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#gel-electrophoresis">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#gel-electrophoresis">
     <!-- Gel Electrophoresis is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Gel_electrophoresis"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
     <rdfs:label>Gel Electrophoresis</rdfs:label>
     <rdfs:comment>Gel electrophoresis is a method for separation and analysis of macromolecules (DNA, RNA and proteins) and their fragments, based on their size and charge.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Mathematical Modeling -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#mathematical-modeling">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#mathematical-modeling">
     <!-- Mathematical Modeling is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Mathematical-modeling"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
     <rdfs:label>Mathematical Modeling</rdfs:label>
     <rdfs:comment>A mathematical model is a description of a system using mathematical concepts and language. The process of developing a mathematical model is termed mathematical modeling.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Molecular Cloning -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#molecular-cloning">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#molecular-cloning">
     <!-- Molecular Cloning is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Molecular_cloning"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
     <rdfs:label>Molecular Cloning</rdfs:label>
     <rdfs:comment>Molecular cloning is a set of experimental methods in molecular biology that are used to assemble recombinant DNA molecules and to direct their replication within host organisms.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Polymerase chain reaction (PCR) -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#polymerase-chain-reaction">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#polymerase-chain-reaction">
     <!-- Polymerase chain reaction (PCR) is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Polymerase_chain_reaction"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
     <rdfs:label>Polymerase chain reaction (PCR)</rdfs:label>
     <rdfs:comment>Polymerase chain reaction (PCR) is a technique used in molecular biology to amplify a single copy or a few copies of a segment of DNA across several orders of magnitude, generating thousands to millions of copies of a particular DNA sequence.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Time Series Analysis -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#time-series-analysis">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#time-series-analysis">
     <!-- Time Series Analysis is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Time_series"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
     <rdfs:label>Time Series Analysis</rdfs:label>
     <rdfs:comment>A time series is a series of data points indexed (or listed or graphed) in time order. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.</rdfs:comment>
   </owl:Class>
   <!-- OWL Subclass Definition - Wastewater Treatement -->
-  <owl:Class rdf:about="https://www.lib.montana.edu/ontology/biosciences#wastewater-treatment">
+  <owl:Class rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#wastewater-treatment">
     <!-- Wastewater Treatment is a subclassification of expertise -->
     <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Wastewater_treatment"/>
-    <rdfs:subClassOf rdf:resource="https://www.lib.montana.edu/ontology/biosciences#expertise"/>
+    <rdfs:subClassOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
     <rdfs:label>Wastewater_treatment</rdfs:label>
     <rdfs:comment>Wastewater treatment is a process used to convert wastewater - which is water no longer needed or suitable for its most recent use - into an effluent that can be either returned to the water cycle with minimal environmental issues or reused.</rdfs:comment>
   </owl:Class>
