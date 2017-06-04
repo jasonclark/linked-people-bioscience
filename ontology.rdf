@@ -352,6 +352,36 @@
   <!-- Probable subclasses will be based on dbpedia entities -->
   <!-- Additional Subclasses Under Development... -->
 
+  <!-- OWL Property Definitions -->
+  <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-action">
+    <rdfs:label xml:lang="en">hasAction</rdfs:label>
+    <rdfs:comment xml:lang="en">Action carried out by a person</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
+    <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#action"/>  
+    <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-document">
+    <rdfs:label xml:lang="en">hasDocument</rdfs:label>
+    <rdfs:comment xml:lang="en">Document type created by a person</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
+    <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>  
+    <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-expertise">
+    <rdfs:label xml:lang="en">hasExpertise</rdfs:label>
+    <rdfs:comment xml:lang="en">Expertise associated with a person</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
+    <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>  
+    <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/>
+  </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-topic">
+    <rdfs:label xml:lang="en">hasTopic</rdfs:label>
+    <rdfs:comment xml:lang="en">Topic associated with a person</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
+    <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#topic"/>  
+    <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/>
+  </owl:ObjectProperty>
+
   <!-- Remainder Of Document Under Development... -->
 
 </rdf:RDF>
