@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>All researcher's expertise topics visualization - treemap</title>
+<style>
+body {
+  margin: auto;
+  position: relative;
+  width: 960px;
+}
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.controls {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.node {
+  border: solid 1px white;
+  font: 10px sans-serif;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 2px;
+}
+</style>
+</head>
+<body>
+<form>
+  <label><input type="radio" name="mode" value="size" checked> Size</label>
+  <label><input type="radio" name="mode" value="count"> Count</label>
+</form>
+<p class="controls"><a href="../browse-expertise.html">expertise topics list</a></p>
+<div id="canvas"></div>
+<!-- load the d3.js library -->
+<script src="d3.v4.min.js"></script>
+<script>
+'use strict';
+
+const margin = {top: 40, right: 10, bottom: 10, left: 10},
+      width = 960 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom,
+      color = d3.scaleOrdinal().range(d3.schemeCategory20c);
+
+// declares a treemap layout and assigns the size
+const treemap = d3.treemap().size([width, height]);
+
+const div = d3.select("#canvas").append("div")
+    .style("position", "relative")
+    .style("width", (width + margin.left + margin.right) + "px")
+    .style("height", (height + margin.top + margin.bottom) + "px")
+    .style("left", margin.left + "px")
+    .style("top", margin.top + "px");
+// load the external data
+d3.json("expertise-treemap.json", function(error, data) {
+  if (error) throw error;
+
+  const root = d3.hierarchy(data, (d) => d.children)
+    .sum((d) => d.size);
+
+  const tree = treemap(root);
+  // Assigns parent, children, height, depth
+  const node = div.datum(root).selectAll(".node")
+    .data(tree.leaves())
+    .enter().append("div")
+    .attr("class", "node")
+    .style("left", (d) => d.x0 + "px")
+    .style("top", (d) => d.y0 + "px")
+    .style("width", (d) => Math.max(0, d.x1 - d.x0 - 1) + "px")
+    .style("height", (d) => Math.max(0, d.y1 - d.y0  - 1) + "px")
+    .style("background", (d) => color(d.parent.data.name))
+    .text((d) => d.data.name);
+
+  d3.selectAll("input").on("change", function change() {
+    const value = this.value === "count"
+      ? (d) => { return d.size ? 1 : 0;}
+      : (d) => { return d.size; };
+
+    const newRoot = d3.hierarchy(data, (d) => d.children)
+      .sum(value);
+
+    node.data(treemap(newRoot).leaves())
+      .transition()
+      .duration(1500)
+      .style("left", (d) => d.x0 + "px")
+      .style("top", (d) => d.y0 + "px")
+      .style("width", (d) => Math.max(0, d.x1 - d.x0 - 1) + "px")
+      .style("height", (d) => Math.max(0, d.y1 - d.y0  - 1) + "px")
+  });
+});
+</script>
+</body>
+</html>
