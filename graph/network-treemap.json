@@ -40,8 +40,8 @@ while ($row = $getNetworkTopics->fetch_object()) {
   $url_term = basename($object_url);
   if ($getNetworkTopics->num_rows) {
     //print list of network topics
-    echo $separator.'{"name": "'.$object.'", "size": '.$object_count;
-    $separator = "},\n";
+    echo $separator.'{"name": "'.$object.'", "children": [{"name": "'.$object.'", "size": '.$object_count.'}]}';
+    $separator = ",\n";
   } else {
 ?>
     "There are no network topics assigned to the databases."
@@ -49,6 +49,5 @@ while ($row = $getNetworkTopics->fetch_object()) {
   }
 }
 ?>
-    }
   ]
 }
