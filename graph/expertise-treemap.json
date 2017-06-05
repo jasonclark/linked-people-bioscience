@@ -1,0 +1,58 @@
+<?php
+//set correct content-type for json output
+header('Content-Type: application/json');
+
+//pass database parameters and connect to database
+include_once '../meta/assets/database-params.inc';
+//bring special functions and utilities onto page
+include '../meta/inc/utilities.php';
+
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//request expertise topics
+$query = 'SELECT create_action.object, create_action.object_uri, 
+COUNT(create_action_match.create_id) as object_count 
+FROM linked_people.create_action_match 
+JOIN linked_people.create_action ON (create_action.create_id = create_action_match.create_id)
+JOIN linked_people.person ON (create_action_match.person_id = person.person_id)
+GROUP BY create_action.object';   
+$getExpertiseTopics =  $connectLinkedpeople->query($query) or die("Error retrieving data from database.");
+?>
+{
+  "@id": <?php echo json_encode($protocol.$server.$path.'/'); ?>,
+  "name": "Expertise topics - Linked Bioscience",
+  "description": "Expertise topics for Linked Bioscience",
+  "children": [
+<?php
+//list expertise topics and print out as HTML
+$separator = "";
+while ($row = $getExpertiseTopics->fetch_object()) {
+  //$object_id = $row->create_id;
+  $object = $row->object;
+  $object_url = $row->object_uri;
+  $object_count = $row->object_count;
+  $url_term = basename($object_url);
+  $specialtyURL = json_encode($row->object_uri);
+  if ($getExpertiseTopics->num_rows) {
+    //print list of expertise topics
+    echo $separator.'{"name": "'.$object.'", "size": '.$object_count;
+    $separator = "},\n";
+
+
+  } else {
+?>
+    "There are no expertise topics assigned to the databases."
+<?php
+  }
+}
+?>
+    }
+  ]
+}
