@@ -42,10 +42,8 @@ while ($row = $getExpertiseTopics->fetch_object()) {
   $specialtyURL = json_encode($row->object_uri);
   if ($getExpertiseTopics->num_rows) {
     //print list of expertise topics
-    echo $separator.'{"name": "'.$object.'", "size": '.$object_count;
-    $separator = "},\n";
-
-
+    echo $separator.'{"name": "'.$object.'", "children": [{"name": "'.$object.'", "size": '.$object_count.'}]}';
+    $separator = ",\n";
   } else {
 ?>
     "There are no expertise topics assigned to the databases."
@@ -53,6 +51,5 @@ while ($row = $getExpertiseTopics->fetch_object()) {
   }
 }
 ?>
-    }
   ]
 }
