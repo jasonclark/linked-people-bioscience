@@ -113,7 +113,7 @@ if ($customCSS = (empty($customCSS)) ? null : $customCSS) {
         if ($getNetworkTopics->num_rows) {
 ?>
         <li property="additionalType" resource="<?php echo $object_url; ?>">
-          <a href="./search.html?liaison=<?php echo urlencode($url_term);?>"><?php echo $object; ?> (<?php echo $object_count; ?>)</a>
+          <a href="./search.html?network=<?php echo urlencode($object);?>"><?php echo $object; ?> (<?php echo $object_count; ?>)</a>
           <link property="about" href="https://en.wikipedia.org/wiki/<?php echo str_replace(' ', '_', $object); ?>" />
         </li>
 <?php
