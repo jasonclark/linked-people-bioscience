@@ -1,0 +1,53 @@
+<?php
+//set correct content-type for json output
+header('Content-Type: application/json');
+
+//pass database parameters and connect to database
+include_once '../meta/assets/database-params.inc';
+//bring special functions and utilities onto page
+include '../meta/inc/utilities.php';
+
+//get and set url protocol
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
+//set and sanitize global variables for URL construction
+$server = isset($_SERVER['SERVER_NAME']) ? htmlentities(strip_tags($_SERVER['SERVER_NAME'])) : null;
+$path = isset($_SERVER['PHP_SELF']) ? htmlentities(strip_tags(dirname($_SERVER['PHP_SELF']))) : null;
+$fileName = isset($_SERVER['SCRIPT_NAME']) ? htmlentities(strip_tags(basename($_SERVER['SCRIPT_NAME']))) : null;
+$fileNameURI = isset($_SERVER['REQUEST_URI']) ? htmlentities(strip_tags($_SERVER['REQUEST_URI'])) : null;
+$fileExtension = isset($_SERVER['PATH_INFO']) ? pathinfo($fileName, PATHINFO_EXTENSION) : null;
+
+//request network topics
+$query = 'SELECT interact_action.object, interact_action.object_uri, 
+COUNT(interact_action_match.interact_id) as object_count 
+FROM linked_people.interact_action_match 
+JOIN linked_people.interact_action ON (interact_action.interact_id = interact_action_match.interact_id)
+JOIN linked_people.person ON (interact_action_match.person_id = person.person_id)
+GROUP BY interact_action.object';   
+$getNetworkTopics =  $connectLinkedpeople->query($query) or die("Error retrieving data from database.");
+?>
+{
+  "@id": <?php echo json_encode($protocol.$server.$path.'/'); ?>,
+  "name": "Network topics - Linked Bioscience",
+  "description": "Network topics for Linked Bioscience",
+  "children": [
+<?php
+//list network topics and print out as HTML
+$separator = "";
+while ($row = $getNetworkTopics->fetch_object()) {
+  $object = $row->object;
+  $object_url = $row->object_uri;
+  $object_count = $row->object_count;
+  $url_term = basename($object_url);
+  if ($getNetworkTopics->num_rows) {
+    //print list of network topics
+    echo $separator.'{"name": "'.$object.'", "children": [{"name": "'.$object.'", "url": "'.$object_url.'", "size": '.$object_count.'}]}';
+    $separator = ",\n";
+  } else {
+?>
+    "There are no network topics assigned to the databases."
+<?php
+  }
+}
+?>
+  ]
+}
