@@ -125,7 +125,7 @@ $queryToModsMap = array (
 	"facet"    	=> "",
 	"team"      => "",
 	"staff"    	=> "",
-	"liaison"  	=> "",
+	"network"  	=> "",
 	"expertise" => ""
 );
 
@@ -334,7 +334,7 @@ class QueryData
 		{
 			$queryString .= " FROM person, interact_action, interact_action_match, create_action, create_action_match";
 		}
-		else if ($element === "liaison")
+		else if ($element === "network")
 		{
 			$queryString .= " FROM person, interact_action, interact_action_match ";	
 		}
@@ -384,7 +384,7 @@ class QueryData
 
 					$queryString .= " AND memberOf LIKE '$value' ";
 				}
-				else if ($element === "liaison")
+				else if ($element === "network")
 				{
 					$value = $this->connectLinkedpeople->real_escape_string($value);
 				
@@ -489,7 +489,7 @@ class QueryData
 				 LEFT JOIN interact_action ON interact_action_match.interact_id = interact_action.interact_id
 			";
 	    }
-	    else if ($element === "liaison")
+	    else if ($element === "network")
 	    {
 	        $queryCountString .= " FROM person, interact_action, interact_action_match ";
 	    }
@@ -536,7 +536,7 @@ class QueryData
 	                $value = $this->connectLinkedpeople->real_escape_string($value);
                     $queryCountString .= " AND memberOf LIKE '$value' ";
                 }
-                else if ($element === "liaison")
+                else if ($element === "network")
                 {
                     $value = $this->connectLinkedpeople->real_escape_string($value);
                     $queryCountString .= "
