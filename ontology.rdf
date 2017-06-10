@@ -360,6 +360,14 @@
     <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#action"/>  
     <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#action-of">
+    <rdfs:label xml:lang="en">actionOf</rdfs:label>
+    <rdfs:comment xml:lang="en">A person can have a (theoretically unlimited) number of actions</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
+    <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#action"/>
+    <owl:inverseOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-action"/>
+    <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/> 
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-document">
     <rdfs:label xml:lang="en">hasDocument</rdfs:label>
     <rdfs:comment xml:lang="en">Document type created by a person</rdfs:comment>
