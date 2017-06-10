@@ -375,6 +375,14 @@
     <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>  
     <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document-of">
+    <rdfs:label xml:lang="en">documentOf</rdfs:label>
+    <rdfs:comment xml:lang="en">A person can have a (theoretically unlimited) number of documents</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
+    <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#document"/>
+    <owl:inverseOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-document"/>
+    <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/> 
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-expertise">
     <rdfs:label xml:lang="en">hasExpertise</rdfs:label>
     <rdfs:comment xml:lang="en">Expertise associated with a person</rdfs:comment>
