@@ -390,7 +390,15 @@
     <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>  
     <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/>
   </owl:ObjectProperty>
-    <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-topic">
+  <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise-of">
+    <rdfs:label xml:lang="en">expertiseOf</rdfs:label>
+    <rdfs:comment xml:lang="en">A person can have a (theoretically unlimited) number of expertise topics</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
+    <rdfs:range rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#expertise"/>
+    <owl:inverseOf rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-expertise"/>
+    <rdfs:isDefinedBy rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf"/> 
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#has-topic">
     <rdfs:label xml:lang="en">hasTopic</rdfs:label>
     <rdfs:comment xml:lang="en">Topic associated with a person</rdfs:comment>
     <rdfs:domain rdf:resource="https://arc.lib.montana.edu/linked-bioscience/ontology.rdf#person"/>
