@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sitemap - Linked Bioscience</title>
+<meta name="description" content="Code prototype for Linked People"/>
+<link rel="canonical" href="ADD-PREFERRED-PAGE-URL-HERE"/>
+<link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Oswald"/>
+<style>
+html {-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;box-sizing:border-box;}
+*,:before,:after {box-sizing:inherit;}
+html,body {-webkit-font-smoothing:antialiased;background-color:#eee;color:#333;font-family:Oswald,Helvetica,arial,sans-serif;font-size:100%;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:400;height:100%;line-height:1.5;margin:0;padding:0;width:100%;}
+header {background-color:#002a61;color:#fff;line-height:70px;padding:0 70px;width:100%;}
+nav {color:#828282;display:inline;font-size:.7em;padding:0 10px;}
+a {color:#002a61;transition:all .3s;}
+nav a {color:#bebebe;text-decoration:none;}
+nav a:hover {text-decoration:underline;}
+header .nav a,footer .nav a {font-size:14px;}
+header .nav a:not(:last-child),footer .nav a:not(:last-child) {border-right:.0725em solid #c4c4c4;margin-right:5px;padding-right:10px;}
+main {/*height:100vh;*/min-height:396px;padding:20px 40px;}
+.content {column-gap:40px;column-width:300px;}
+.content {display:grid;grid-gap:40px;grid-template-columns:repeat(1, 100%);}
+section {-webkit-column-break-inside:avoid;background-color:#fff;break-inside:avoid;padding:30px;page-break-inside:avoid;}
+@supports (column-width:300px;) {
+  section+section {margin:20px 0;}  
+}
+@supports (display:grid) {
+  section+section {margin:0;}   
+}
+header h1 {color:#fff;display:inline-block;font-size:2em;font-weight:bold;margin:10px 0;padding:0;}
+h1 {color:#1a202c;font-size:1.5em;font-weight:normal;padding:10px 30px;}
+h2 {color:#5d5d5d;font-size:1.17em;font-weight:normal;margin-bottom:.4em;}
+p+p {margin-top:.7em;}
+hr {border:0;border-bottom:0 solid #fff;border-top:.0725em solid #c4c4c4;box-sizing:content-box;height:0;margin:2em auto 1em;}
+img {max-width:100%;height:auto;}
+a.home {text-decoration:none;color:#fff;}
+.border-ftr {width:90%;}
+.center {text-align:center;}
+.copyright {font-size:12px;}
+.example {font-size:11px;}
+.text {padding:5px;width:250px;}
+/*medium screen view < 1030px (based on 16px browser default)*/
+@media all and (max-width:64.375em) {
+  .content {grid-template-columns: repeat(2, 48%);}
+}
+/*small screen view < 801px (based on 16px browser default)*/
+@media all and (max-width:50.063em) {
+  header {line-height:40px;padding:0 45px;}
+  header nav {display:block;padding:0;}
+  main {padding-left:15px;padding-right:15px;}
+  .content {grid-template-columns: repeat(1, 100%);}
+}
+</style>
+</head>
+<body id="page" vocab="https://schema.org/" typeof="AboutPage" resource="https://arc.lib.montana.edu/linked-bioscience/sitemap.html">
+<link property="isPartOf" typeof="CollectionPage" href="https://arc.lib.montana.edu/linked-bioscience/"/>
+<header>
+  <h1><a class="home" href="index.html">Linked Bioscience</a></h1>
+  <nav class="nav"><a href="index.html">Home</a> <a href="search.html">Search</a> <a href="browse-expertise.html">Browse</a></nav>
+</header>
+<main>
+  <h1>Sitemap listing pages in Linked Bioscience (demo)</h1>
+    <div class="content">
+      <section>
+        <h2>Page and file listing</h2>
+        <ul>
+	  <li><a href="https://arc.lib.montana.edu/linked-bioscience/index.html"><span class="title">Linked Bioscience</span></a>
+	  <ul>
+            <li><a href="https://arc.lib.montana.edu/linked-bioscience/graph/network-treemap.html"><span class="title">All researcher's network topics visualization - treemap</span></a>
+	    <ul>
+              <li><a href="https://arc.lib.montana.edu/linked-bioscience/browse-network-topics.html"><span class="title">Linked Bioscience (Demo) - Network Topical Areas: Montana State University (MSU) Library</span></a>
+	      </li>
+            </ul>
+	  </li>
+	  <li><a href="https://arc.lib.montana.edu/linked-bioscience/graph/expertise-treemap.html"><span class="title">All researcher's expertise topics visualization - treemap</span></a>
+	  </li>
+	  <li><a href="https://arc.lib.montana.edu/linked-bioscience/search.html"><span class="title">Linked Bioscience (Demo) - Search: Montana State University (MSU) Library</span></a>
+	  </li>
+	  <li><a href="https://arc.lib.montana.edu/linked-bioscience/browse-expertise.html"><span class="title">Linked Bioscience (Demo) - Expertise: Montana State University (MSU) Library</span></a>
+          </li>
+        </ul>
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>
+<footer>
+  <hr class="border-ftr">
+  <p class="nav center">
+    <a property="relatedLink" href="https://github.com/jasonclark/linked-people-bioscience">GitHub</a>
+    <a property="relatedLink" href="http://journal.code4lib.org/articles/12320">Article</a>
+    <a property="relatedLink" href="https://www.lib.montana.edu/">Library</a>
+  </p>
+  <p class="copyright center">
+    &copy; <a property="author creator copyrightHolder reviewedBy" rel="author" href="https://www.wikidata.org/wiki/Q15255419">Montana State University (MSU) Library</a>  <time property="dateModified lastReviewed" datetime="2017-04-17T18:57:03-07:00" title="published 2017-04-17T18:57:03-07:00">2017</time>
+  </p>
+</footer>
+</body>
+</html>
