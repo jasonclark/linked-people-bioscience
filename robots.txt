@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.html
+Sitemap: https://arc.lib.montana.edu/linked-bioscience/sitemap.xml
