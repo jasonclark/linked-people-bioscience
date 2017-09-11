@@ -965,14 +965,26 @@ class QueryData
 <footer>
   <hr class="border-ftr">
   <p class="nav center">
-    <a property="relatedLink" href="https://github.com/msulibrary/linked-people">GitHub</a>
+    <a property="relatedLink" href="sitemap.html">Sitemap</a>
+    <a property="relatedLink" href="https://github.com/jasonclark/linked-people-bioscience">GitHub</a>
     <a property="relatedLink" href="http://journal.code4lib.org/articles/12320">Article</a>
     <a property="relatedLink" href="https://www.lib.montana.edu/">Library</a>
   </p>
   <p class="copyright center">
-    &copy; <a property="author creator copyrightHolder reviewedBy" rel="author" href="https://www.wikidata.org/wiki/Q15255419">Montana State University (MSU) Library</a>  <time property="dateModified lastReviewed" datetime="2017-04-17T18:57:03-07:00" title="published 2017-04-17T18:57:03-07:00">2017</time>
+    &copy; <a property="author creator copyrightHolder reviewedBy" rel="author" href="https://www.wikidata.org/wiki/Q15255419">Montana State University (MSU) Library</a>  <time property="dateModified lastReviewed" datetime="2017-09-08T18:57:03-07:00" title="published 2017-09-08T18:57:03-07:00">2017</time>
   </p>
 </footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'ADD-ANALYTICS-ID-HERE', 'auto', {anonymizeIp:true});  
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview');
+
+</script>
 <?php
 if ($customScript = (empty($customScript)) ? null : $customScript) {
   $counted = count($customScript);
