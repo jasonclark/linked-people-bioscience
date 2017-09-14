@@ -49,7 +49,7 @@ while ($row = $getRecords->fetch_object()) {
         <loc><?php echo 'https://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']); ?>/about.json?id=<?php echo $person_id; ?></loc>
         <lastmod><?php echo $updated; ?></lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <priority>1.0</priority>
 </url>
 <?php
   }
