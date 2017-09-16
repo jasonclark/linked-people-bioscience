@@ -22,4 +22,5 @@
 
 /* THANKS */
   Mozilla Science Lab - https://science.mozilla.org/
+  Peter Grabitz for the mentoring and believing in the project - https://twitter.com/PeterRolandG
   Mi familia!
