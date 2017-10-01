@@ -46,14 +46,14 @@ while ($row = $getPerson->fetch_object()) {
   $person_identifier = stripslashes(htmlentities($row->identifier));
 ?>
 {
-  "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id.'#person'); ?>,
+  "@id": <?php echo json_encode($protocol.$server.dirname($path).'/about/'.$id.'#person'); ?>,
   "name": "<?php echo $person_name; ?>",
   "description": "Researcher network for <?php echo $person_name; ?>",
   "@id": <?php echo json_encode($protocol.$server.$path.'/'.$id); ?>,
   "children": [
 <?php
 //get person's colleagues
-$query = "SELECT person_id FROM linked_people.person WHERE person_status = 'a' AND memberOf='$person_dept'";
+$query = "SELECT person_id FROM linked_people.person WHERE person_status = 'a' AND memberOf='$person_dept' AND person_id != '$id'";
 $getColleagues = $connectLinkedpeople->query($query);
 if ($getColleagues->num_rows == 0) {
 ?>
@@ -63,7 +63,7 @@ if ($getColleagues->num_rows == 0) {
 $separator = "";
 while ($row = $getColleagues->fetch_object()) {
   $colleague_id = $row->person_id;
-  $colleague_url = json_encode($protocol.$server.$path.'/'.$colleague_id);
+  $colleague_url = json_encode($protocol.$server.dirname($path).'/about/'.$colleague_id);
   //print list of colleagues
   echo $separator.'{"name":'.$colleague_url;
   $separator = "},\n";
