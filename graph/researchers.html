@@ -39,7 +39,7 @@ var margin = {
     top: 20,
     right: 90,
     bottom: 30,
-    left: 90
+    left: 150
   },
   width = 960 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
@@ -107,7 +107,16 @@ function update(source) {
   });
 
   //Add links to the nodes
- //svg.selectAll(".node").append("svg:a").attr("xlink:href", function(d){ return "generic.php?url=" + d.url })
+nodeEnter.append("a").attr("xlink:href", function(d) { 
+  return d.data.name; })
+  .append("rect")
+  .attr("class", "clickable")
+  .attr("y", -9)
+  .attr("x", function(d) { return d.children || d._children ? -30 : 15; })
+  .attr("width", 45) //2*4.5)
+  .attr("height", 20)
+  .style("fill", "lightsteelblue")
+  .style("fill-opacity", .3);
 
   // UPDATE
   var nodeUpdate = nodeEnter.merge(node);
