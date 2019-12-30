@@ -1,0 +1,70 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "MedicalScholarlyArticle",
+  "about": [
+    {
+      "@type": "Diet",
+      "code": {
+        "@id": "https://www.ncbi.nlm.nih.gov/mesh/68013662",
+        "@type": "MedicalCode",
+        "code": "D013662",
+        "codingSystem": "MeSH"
+      },
+      "name": "Tea"
+      "physiologicalBenefits": "Pu-erh (or pu'er) tea tasting is a social practice that emphasizes shared sensory experience, wellbeing, and alertness. The present study examines how variable production and preparation practices of pu-erh tea affect drinkers' perceptions, phytochemical profiles, and anti-oxidant activity."
+    },
+    {
+      "@type": "MedicalStudy",
+      "name": "Pu-erh tea tasting in Yunnan, China: correlation of drinkers' perceptions to phytochemistry",
+      "study": "One hundred semi-structured interviews were conducted in Yunnan Province to understand the cultural and environmental context of pu-erh tea tasting. The gong fu cha dao ('way of tea' with 'effort,' 'work,' or 'skill') method of brewing tea through multiple infusions was employed to evaluate green and black pu-erh samples from smallholder agro-forests and terrace plantations. Ranking interviews, High Performance Liquid Chromatography (HPLC), and the 1-1-diphenyl-2-picrylhydrazyl (DPPH) assay were conducted to characterize color and taste profiles, Total Catechin Content (TCC), Total Methylxanthine Content (TMC), and free radical scavenging capacity (IC(50)). Significant variation was found among pu-erh samples based on: (1) agro-ecosystem mode of production by TCC (P<0.0001) and TMC (P<0.0265), (2) processing method for TCC (P<0.0001), TMC (P<0.0027), and free radical scavenging capacity (P<0.0001), (3) infusion sequence for TMC (P<0.0013), (4) taste rankings for TCC (P<0.0001), TMC (P<0.0001), and IC(50) (P<0.0059) and, (5) color rankings for TMC (P<0.0009) and IC(50) (P<0.0001). Samples rated as bitter and bitter-sweet contained the greatest TCC and free radical scavenging capacity."
+    }
+  ],
+  "audience": "http://schema.org/Clinician",
+  "author": [{
+    "@type": "Person",
+    "affiliation": "Montana State University",
+    "name": "Dr. Selena Ahmed"
+    },
+    {
+    "@type": "Person",
+    "name": "Unachukwu U"
+    },
+    {
+    "@type": "Person",
+    "name": "Stepp JR"
+    },
+    {
+    "@type": "Person",
+    "name": "Peters CM"
+    },
+    {
+    "@type": "Person",
+    "name": "Long C"
+    },
+    {
+    "@type": "Person",
+    "name": "Kennelly E"
+    }
+  }],
+  "code": {
+    "@id": "https://www.ncbi.nlm.nih.gov/mesh/68028241",
+    "@type": "MedicalCode",
+    "code": "D028241",
+    "codingSystem": "MeSH"
+  },
+  "datePublished": "2010-10-28",
+  "description": "This research demonstrated that production environment, processing methods, and infusion sequence in preparing tea are related to the phytochemical profile, free radical scavenging activity, and flavor of tea. Findings contribute to the ethnomedical literature by supporting previous studies that have hypothesized that the taste of plants, particularly bitterness, may guide societies in the search for medicinal plants and beneficial phytochemicals.",
+  "evidenceLevel": "http://schema.org/EvidenceLevelB",
+  "evidenceOrigin": "single randomized trial, or nonrandomized studies",
+  "name": "Pu-erh tea tasting in Yunnan, China: correlation of drinkers' perceptions to phytochemistry",
+  "publicationType": "Research Support, Non-U.S. Gov't",
+  "recommendationStrength": "Strong recommendation",
+  "guidelineSubject": [
+    "Tea",
+    "Camellia sinensis",
+    "Camellia sinensis/chemistry*",
+    "Taste Perception*"
+  ]
+}
+</script>
