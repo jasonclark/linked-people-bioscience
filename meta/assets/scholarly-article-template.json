@@ -11,7 +11,7 @@
         "code": "D013662",
         "codingSystem": "MeSH"
       },
-      "name": "Tea"
+      "name": "Tea",
       "physiologicalBenefits": "Pu-erh (or pu'er) tea tasting is a social practice that emphasizes shared sensory experience, wellbeing, and alertness. The present study examines how variable production and preparation practices of pu-erh tea affect drinkers' perceptions, phytochemical profiles, and anti-oxidant activity."
     },
     {
@@ -21,7 +21,8 @@
     }
   ],
   "audience": "http://schema.org/Clinician",
-  "author": [{
+  "author": [
+    {
     "@type": "Person",
     "affiliation": "Montana State University",
     "name": "Dr. Selena Ahmed"
@@ -46,7 +47,7 @@
     "@type": "Person",
     "name": "Kennelly E"
     }
-  }],
+  ],
   "code": {
     "@id": "https://www.ncbi.nlm.nih.gov/mesh/68028241",
     "@type": "MedicalCode",
